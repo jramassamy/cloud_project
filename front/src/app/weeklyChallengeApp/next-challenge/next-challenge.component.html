@@ -1,0 +1,79 @@
+<ng-container *ngIf="loaded">
+  <h1 id="titlePage">Le Prochain Challenge</h1>
+  <ng-container *ngIf="nextChallenge">
+    <p class="dateInformation">Participation ouverte à partir du
+      {{this.nextChallenge.processCreatif | date:'d MMMM HH:mm' | titlecase}}
+    </p>
+    <div id="contentTitle">
+      <div id="leftLine">
+        <img src="./assets/line.png">
+      </div>
+      <div id="divImg"><img [src]="nextChallenge.challengeArtwork" /></div>
+      <div id="rightLine">
+        <img src="./assets/line.png" />
+      </div>
+    </div>
+    <p class="dateInformation">Début des votes le
+      {{this.nextChallenge.debutChallenge | date:'d MMMM' | titlecase}} à
+      {{this.nextChallenge.debutChallenge | date:'HH:mm'}}
+    </p>
+
+    <div id="divForm">
+      <p id="titleTheme">Le thème de cette session est - {{nextChallenge.challengeName}}</p>
+      <div id="infoTheme" [innerHTML]="content | safeHtml"></div>
+      <p id="mediasChallenge">Tente ta chance, les 3 premières compositions ainsi que le coup de cœur du jury sont
+        ensuite
+        diffusés sur la chaîne YouTube du projet, 80% des revenus générés par ton instru' te sont reversés</p>
+      <div *ngIf="previewFind">
+        <p id="previewTxt">Preview</p>
+        <app-sound-cloud-music [preview]="true" [artistSound]="artistUrl">
+        </app-sound-cloud-music>
+      </div>
+      <p id="enteteTheme">{{textEntete}}</p>
+      <form #participationForm="ngForm" (ngSubmit)="onSubmitParticipation(participationForm)">
+        <div id="divSoundCloudLink">
+          <div id="divInput">
+            <img *ngIf="inputSoundCloud.errors" src="./assets/cross.svg" class="formIcon" />
+            <img *ngIf="!inputSoundCloud.errors && inputSoundCloud.value" src="./assets/check.svg" class="formIcon" />
+            <input type="text" [(ngModel)]="soundCloudUrl" name="soundcloudUrl" placeholder="Lien SoundCloud"
+              id="inputSoundCloud" required [pattern]="soundCloudPattern" #inputSoundCloud="ngModel">
+            <img src="./assets/soundIcon.svg" class="inputIcon" />
+          </div>
+          <button type="submit">ENVOYER</button>
+        </div>
+        <p id="errorMsg" *ngIf="showError">Une erreur est survenue, l'url de ta musique doit suivre cette règle,
+          https://soundcloud.com/artiste/composition</p>
+      </form>
+      <p id="footerTheme" class="titleTexte">Dès que le challenge commence, tu auras 3 votes à effectuer pour pouvoir être diffusé si tu gagnes, saches que tous les beatmakers ont aussi 3 votes, bon courage à toi, Turn Up
+        🔥</p>
+      <a class="btnAHrefChallenge" id="decide" target="_blank" href="https://forms.gle/2k3K9puZz7UENaCu7">Décide du
+        thème suivant</a>
+      <a class="btnAHrefChallenge" id="consulte" routerLink="/forum/general/5d06c614998bc02124881bca">Consulte
+        les règles en détail</a>
+      <a href="https://www.youtube.com/channel/UCPoF3pEhRliHIOsHaITTXqA" target="_blank">
+        <img src="./assets/youtube.svg" class="imgMedia" />
+      </a>
+    </div>
+
+    <div id="slider" (click)="updateSlideIndex()">
+      <div [class.show]="slideIndex === 0">
+        <p>Upload ta musique sur SoundCloud (1/3) =></p>
+        <img src="./assets/tutoPostMusic/img1.png">
+      </div>
+      <div [class.show]="slideIndex === 1">
+        <p>Ajoute ton image & vérifie bien que ta musique soit publique (2/3) =></p>
+        <img src="./assets/tutoPostMusic/img2.png">
+      </div>
+      <div [class.show]="slideIndex === 2">
+        <p>Voici le lien à copier pour qu'on puisse écouter ton son 🔊 (3/3)</p>
+        <img src="./assets/tutoPostMusic/img3.png">
+      </div>
+    </div>
+  </ng-container>
+  <div id="defaultTextDiv" *ngIf="!nextChallenge">
+    <p>L'équipe réfléchit au prochain challenge, dès qu'il est prêt nous te tiendrons
+      informé.</p>
+    <p>En attendant, tu peux toujours aller voir le forum et nous aider à choisir le thème du prochain Challenge.</p>
+    <p>Ou alors, tu peux jeter un coup d'oeil à celui qui s'est terminé.</p>
+  </div>
+</ng-container>

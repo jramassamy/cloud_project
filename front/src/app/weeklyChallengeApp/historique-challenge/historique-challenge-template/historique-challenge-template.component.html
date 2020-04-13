@@ -1,0 +1,24 @@
+<div (click)="showHideMusics()" *ngIf="_challengeData" id="topic">
+  <div id="top">
+    <h3 id="titleTopic">{{_challengeData.challengeName | uppercase}}</h3>
+    <div id="divPanelButton">
+      <img src="./assets/eye.svg">
+    </div>
+  </div>
+  <div id="infoProcess">
+    <div id="participant">
+      <p>Début du Challenge</p>
+      <p id="infoDate">Le
+        {{_challengeData.debutChallenge | date:'d MMMM' | titlecase}}</p>
+    </div>
+    <div id="lastParticipant">
+      <p>Partipants: {{nbParticipant}}</p>
+    </div>
+  </div>
+</div>
+<div *ngIf="listMusicState">
+  <ng-container *ngFor="let artistSound of _challengeData.musics">
+    <app-sound-cloud-music [preview]="true" [electeurData]="null" [artistSound]="artistSound" [challengeId]="null">
+    </app-sound-cloud-music>
+  </ng-container>
+</div>

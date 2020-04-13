@@ -1,0 +1,109 @@
+<div id="header">
+  <p id="title">exprime ta créativité</p>
+</div>
+<div class="doubleDiv">
+  <div class="doublePresentation">
+    <p class="titlePresentation">
+      Participe à nos challenges
+    </p>
+    <h1 class="descPresentation">Viens t'exercer en défiant d'autres beatmakers</h1> <p class="descPresentation">autour d'un thème différent chaque semaine en
+      composant une instrumentale spécialement pour l'occasion</p>
+    <img src="./assets/piano.svg" id="pianoChallenge" />
+    <div id="challengeButtonsDiv">
+      <a class="btnAHrefChallenge" routerLink="/liste-des-challenges" id="btnParticipation">Consulte les précédents challenges</a>
+      <div id="lineChallenge"></div>
+      <a class="btnAHrefChallenge" routerLink="/forum/les-challenges/creativebeats-le-projet-1" id="btnInscription">Je Participe</a>
+    </div>
+  </div>
+  <div class="doublePresentation">
+    <h2 class="titlePresentation">
+      Gagne en exposition
+    </h2>
+    <h3 class="descPresentation">Les 3 premières compositions ainsi que le coup de cœur du jury sont ensuite
+      diffusés sur la chaîne YouTube du projet</h3>
+    <a routerLink="/nextChallenge">
+      <div id="crown">
+        <img id="podium" src="./assets/homeImages/podium.svg" class="imgMedia" />
+        <img id="addImg" src="./assets/homeImages/add.svg">
+        <img src="./assets/homeImages/crown.svg" class="imgMedia" />
+      </div>
+    </a>
+    <div id="recompenseDiv">
+      <h3 class="descPresentation">80% des revenus générés par ton instru' te sont reversés et on met en avant tes
+        réseaux et ta chaîne YouTube dans la description</h3>
+    </div>
+
+  </div>
+</div>
+<div id="infoYoutube">
+  <p *ngIf="statistics" class="statYt">{{statistics.viewCount}} Vues</p>
+  <div class="g-ytsubscribe" data-channelid="UCPoF3pEhRliHIOsHaITTXqA" data-layout="default" data-count="default"></div>
+  <p *ngIf="statistics" class="statYt">{{statistics.videoCount}} Vidéos</p>
+</div>
+<div id="divIframeYoutube"><iframe
+    src="https://www.youtube.com/embed/videoseries?list=PLoFr9bEG_sXsGjWSF0bT3X1CSiDY6RG8H" frameborder="0"
+    allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="singlePresentation">
+  <h2 class="titlePresentation">Présentation du Beatmaker de cette semaine</h2>
+  <div *ngIf="lastWinnerLoaded" id="divContentBeatmaker">
+    <div id="beatmakerProfil">
+      <p id="pseudoBeatmaker">{{winnerProfile.userAlias}}</p>
+      <p *ngIf="!defaultValueWinner" id="concoursBeatmaker">GAGNANT DU CONCOURS {{lastChallenge.challengeName}},
+        {{lastChallenge.debutChallenge| date:'d MMMM' | uppercase}}</p>
+      <div [class.marginDefaultWinner]="defaultValueWinner" id="beatmakerProfilDetails">
+        <img *ngIf="winnerImage" [src]="winnerImage" id="beatmakerPreviewImg">
+        <p id="descBeatmaker">{{winnerProfile.userDescription}}</p>
+      </div>
+    </div>
+    <div id="lineAndFollow">
+      <div id="lineTop" class="lineBeatmaker"></div>
+      <img src="./assets/followBlueWhite.svg" id="followBeatmaker">
+      <div id="lineBottom" class="lineBeatmaker"></div>
+    </div>
+    <div id="reseaux">
+      <div class="alignReseaux">
+        <a [class.inactive]="!winnerProfile.userLinks.userFacebook" target="_blank"
+          href="https://www.facebook.com/{{winnerProfile.userLinks.userFacebook}}" class="txtReseaux">
+          <img src="./assets/homeImages/facebook.svg" class="reseauImg">
+        </a>
+        <a [class.inactive]="!winnerProfile.userLinks.userInstagram" target="_blank"
+          href="https://www.instagram.com/{{winnerProfile.userLinks.userInstagram}}" class="txtReseaux">
+          <img src="./assets/homeImages/instagram.svg" class="reseauImg">
+        </a>
+        <a [class.inactive]="!winnerProfile.userLinks.userSnapchat" target="_blank"
+          href="https://www.snapchat.com/add/{{winnerProfile.userLinks.userSnapchat}}" class="txtReseaux">
+          <img src="./assets/homeImages/snapchat.svg" class="reseauImg">
+        </a>
+        <a [class.inactive]="!winnerProfile.userLinks.userTwitter" target="_blank"
+          href="https://twitter.com/{{winnerProfile.userLinks.userTwitter}}" class="txtReseaux">
+          <img src="./assets/homeImages/twitter.svg" class="reseauImg">
+        </a>
+      </div>
+      <div *ngIf="winner" id="lineReseauMedia">
+        <app-sound-cloud-music [image]="false" [preview]="true" [artistSound]="winner.musicUrl">
+        </app-sound-cloud-music>
+      </div>
+      <div class="alignMedia">
+        <a [class.inactive]="!winnerProfile.userLinks.userSoundcloud" target="_blank"
+          href="https://soundcloud.com/{{winnerProfile.userLinks.userSoundcloud}}" class="txtReseaux">
+          <img src="./assets/homeImages/soundcloud.svg" class="reseauImg">
+          <p>Soundcloud</p>
+        </a>
+        <a target="_blank" href="https://www.youtube.com/channel/{{winnerProfile.userLinks.userYoutube}}"
+          class="txtReseaux">
+          <p [class.inactive]="!winnerProfile.userLinks.userYoutube" id="youtubeReseau">Youtube</p>
+          <img src="./assets/youtube.svg" class="reseauImg">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="singlePresentation">
+  <h2 class="titlePresentation">Les instrumentales de la semaine</h2>
+  <div *ngIf="challengePreviewLoaded" id="soundContent">
+    <ng-container *ngFor="let artistSound of currentChallenge.musics">
+      <app-sound-cloud-music *ngIf="artistSound.state==='approved'" [home]="true" [artistSound]="artistSound"
+        [challengeId]="currentChallenge._id" [electeurData]="null"></app-sound-cloud-music>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+
+
+#header {
+  display:flex;
+  height:35px;
+  background-color: rgba(8, 28, 82, 0.2);
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  font-size: 15px;
+  box-shadow: 0 1px 22px rgba(0,0,0,0.3);
+  color:white;
+  font-weight: bold;
+  align-items: center;
+}
+
+#header div {
+  height: inherit;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-left: 2px solid rgba(0,0,0,0.3);
+  width:150px;
+  max-width: calc(100% / 3 - 14px);
+}
+#header div:last-child {
+  border-right: 2px solid rgba(0,0,0,0.3);
+}
+#header div a {
+  width: 100%;
+  height: inherit;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.hidden {
+  display:none !important;
+}
+.show {
+  display: flex !important;
+}
+
+#listAction {
+  margin-top: 7px;
+}
+
+:host ::ng-deep app-forum-admin-panel, :host ::ng-deep app-challenge-admin-panel {
+  height: inherit;
+}
+
+@media(max-width: 1000px) {
+  #header {
+    margin-top: 35px;
+  }
+  #header div a {
+    font-size: 12px;
+  }
+}

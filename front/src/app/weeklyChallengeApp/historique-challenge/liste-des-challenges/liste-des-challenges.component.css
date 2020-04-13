@@ -1,0 +1,26 @@
+@media (max-width: 1200px) {
+    #titlePage {
+      margin-top: 50px !important;
+    }
+  }
+  
+#titlePage {
+margin: 0 auto;
+font-weight: bold;
+font-size: 20px;
+text-align: center;
+letter-spacing: 0.7px;
+margin-top: 25px;
+text-shadow: black 3px 2px 5px;
+text-transform: uppercase;
+}
+#descTitle {
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 16;
+    text-align: center;
+    letter-spacing: 0.7px;
+    margin-top: 10px;
+    text-shadow: black 3px 2px 5px;
+    text-transform: uppercase;
+}

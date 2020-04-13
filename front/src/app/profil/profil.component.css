@@ -1,0 +1,462 @@
+#content{
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+}
+
+#profil{
+  background-color:rgba(255,255,255,0.9);
+  box-shadow: 0px 0px 3px 1px black;
+  color:#333745;
+  width: 600px;
+  height: 650px;
+  font-family: inherit;
+  position: relative;
+}
+
+#profilHeader{
+  position: relative;
+  text-align: center;
+  margin-top: 10px;
+  min-height:120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#profilImgDiv{
+  position: absolute;
+  width:90px;
+  height:90px;
+  border: 1px solid black;
+  margin-top: 10px;
+  margin-left:10px;
+  border-radius:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#imgProfil {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+#profilPseudo{
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+#formUpdateDiv{
+  text-align: center;
+}
+
+/*new*/
+
+#profilDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+#userImgDiv {
+  margin-top:15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#userImg {
+  width: 125px;
+  height: 125px;
+  border-radius: 100px;
+  border: 3px solid rgba(8, 28, 82, 0.7);
+}
+
+#rightLine {
+  margin-left: 5px;
+  transform: rotate(180deg);
+}
+
+#leftLine {
+  margin-right: 5px;
+}
+.line {
+  width: calc(100% / 2 - 105px);
+  max-width: 250px;
+}
+
+#contentEnteteProfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#titleUserDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#titleUserDiv img {
+  width: 55px;
+}
+#userName {
+  font-family: 'Track';
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 26px;
+  letter-spacing: 3px;
+  text-shadow: black 3px 2px 5px;
+}
+
+#titleUserContent {
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  margin-left: 5px;
+  text-transform: uppercase;
+  text-shadow: black 3px 2px 5px;
+  color: white;
+}
+
+.lineTitle {
+  height: 0;
+  width: 240px;
+  border: 0.5px solid antiquewhite;
+  opacity: 1;
+}
+
+.hrefButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 5px;
+  padding-left: 5px;
+  border: none;
+  box-shadow: 0px 0px 3px 1px black;
+  color: white;
+  text-shadow: black 3px 2px 5px;
+  height: 30px;
+  font-size: 15px;
+  border-radius: 2px;
+  outline: none;
+  letter-spacing: 1px;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: bold;
+  background-color: rgba(8, 28, 82, 0.7);
+}
+
+#contacter {
+  margin-top: 10px;
+}
+
+#listActionProfil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
+  height: 80px;
+  background-color:rgba(0,0,0,0.7);
+}
+
+.flexDivProfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  cursor: pointer;
+}
+
+.flexDivProfil p {
+  font-size: 15px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  color: #E4E9F9;
+}
+.divImgAction {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+#profilAction {
+  margin-top: -5px;
+}
+#textProfil {
+  padding-top: 5px;
+}
+#compoImgAction {
+  width: 50px;
+  height:50px;
+}
+
+#userImgAction {
+  width: 45px;
+  height: 45px;
+}
+
+#contentProfil, #contentComposition {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  flex-grow: 1;
+  background-color: rgba(0,0,0,0.7);
+  width: 100%;
+}
+#contentComposition {
+  flex-direction: column;
+  align-items: center;
+}
+.divMediaReseau {
+  margin-top: 7px;
+  display: flex;
+  flex-direction: column;
+}
+
+#medias {
+  margin-top: 10px;
+}
+.containerMR {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 5px;
+}
+#lineMedia, #lineReseau {
+  height: 0;
+  border-radius: 100px;
+  border: 0.7px solid white;
+  background: white;
+  margin: 0;
+  margin-bottom: 3px;
+  margin-left: 2px;
+
+}
+
+#lineReseau {
+  width: 100%;
+}
+
+#lineMedia {
+  width: 100%;
+}
+
+#textReseau, #textMedia {
+  font-family:'Track';
+  font-size: 17px;
+  letter-spacing: 1px;
+  text-shadow: black 3px 2px 5px;
+}
+#textReseau {
+  height: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+#flexColumn {
+  display: flex;
+  flex-direction: column;
+  width: 295px;
+}
+
+.txtReseaux {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+.txtReseaux p {
+  font-size: 13px;
+  margin-left: 5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: black 3px 2px 5px;
+}
+
+.txtReseaux input, #contentComposition input{
+  color: black;
+  border-bottom: 2px solid white;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  color: white;
+  font-family: lato;
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+  outline:none;
+  background-color: rgba(255,255,255,0);
+  resize:none;
+}
+
+.txtReseaux input {
+  width: 150px;
+}
+#contentComposition input {
+  margin-top: 5px;
+  width: 300px ;
+}
+.reseauImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+}
+
+#descDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.updateProfil {
+  position: absolute;
+  right: 2px;
+  top: 5px;
+  cursor: pointer;
+}
+.updateProfil img {
+  width: 25px;
+  height: 25px;
+}
+
+.saveProfil {
+  position: absolute;
+  right: 35px;
+  top: 5px;
+}
+.saveMusic {
+  margin-left: 5px;
+}
+.saveProfil, .saveMusic {
+  cursor: pointer;
+}
+.saveProfil img, .saveMusic img {
+  width: 25px;
+  height: 25px;
+}
+
+.descEntete, .descAddMusic {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 7px;
+  text-shadow: black 3px 2px 5px;
+}
+.descEntete {
+  font-size: 17px;
+}
+.descAddMusic {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+#contentDesc {
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 17px;
+  text-shadow: black 3px 2px 5px;
+  letter-spacing: 1px;
+  line-height: 22px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: default;
+  resize: none;
+}
+
+@media(max-width:1000px) {
+ #contentProfil {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+ #flexColumn {
+   margin-top: 7px;
+ }
+ #medias {
+   margin-top: 15px;
+ }
+ #descDiv {
+  width: 90%;
+  margin-top: 15px;
+ }
+ #contentDesc {
+  height: 200px;
+ }
+}
+
+#userImgContainer {
+  position: relative;
+}
+input[type=file] {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  opacity: 0;
+  left: -10px;
+  top: -10px;
+  position: absolute;
+  cursor: pointer;
+}
+
+#userAddImg {
+  font-size: 60px;
+  font-weight: bold;
+  pointer-events: none;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: -5px;
+  margin: auto;
+  color: rgba(0,0,0, 0.7);
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.updateDesc {
+  background-color: rgba(255,255,255,1) !important;
+  color: black !important;
+  text-shadow: none !important;
+}
+
+#errorMusic {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+.inactive {
+  opacity: 0.5;
+}
+
+@media(max-width: 1000px) {
+  #userImgDiv {
+    margin-top: 50px;
+  }
+}

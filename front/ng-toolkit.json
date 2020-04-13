@@ -1,0 +1,12 @@
+{
+  "serverless": {
+    "provider": "aws",
+    "project": "creativeProject",
+    "skipInstall": false,
+    "directory": ".",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}

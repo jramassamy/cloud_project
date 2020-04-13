@@ -1,0 +1,350 @@
+#contentTitle
+{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top:5px;
+  margin-bottom: 5px;
+  color:white;
+  width: 100%;
+}
+
+#lotChallenge {
+  letter-spacing: 1px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 18px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+#mediasChallenge {
+  letter-spacing: 1px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.dateInformation {
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: black 3px 2px 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#titleTheme {
+  font-family: 'Track';
+  letter-spacing: 1px;
+  margin-top: 7px;
+}
+
+#infoTheme {
+  letter-spacing: 1px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 20px;
+  margin-top: 10px;
+}
+#previewTxt {
+  margin-top: 15px;
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#enteteTheme, #footerTheme {
+  letter-spacing: 1px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 18px;
+}
+
+#enteteTheme {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+#rightLine img
+{
+  transform: rotate(180deg);
+}
+#rightLine
+{
+  max-width: calc((100% - 220px) / 2);
+  width: 100%;
+  margin-left:5px;
+  text-align: left;
+}
+#leftLine
+{
+  max-width: calc((100% - 230px) / 2);
+  width: 100%;
+  margin-right:5px;
+  text-align: right;
+}
+
+#rightLine img, #leftLine img {
+  max-width: 100%;
+}
+#contentTitle p{
+  font-family: brightshine;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 45px;
+}
+#divImg img {
+  width: 215px;
+  height: 100px;
+}
+.item img {
+  margin: 0 auto;
+  width:inherit;
+  max-width: 610px;
+  height: auto;
+  box-shadow: 0 1px 22px rgba(0,0,0,0.3);
+}
+
+form button{
+  display: inline-block;
+  color: #fff;
+  margin-left: 5px;
+  background-color: rgba(8, 28, 82, 0.7);
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight:bold;
+  font-size:13px;
+  letter-spacing: 1px;
+  outline:none;
+}
+
+#divForm
+{
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 7px;
+  padding: 6px;
+  margin-bottom: 2px;
+  background-color: rgba(0,0,0,0.7);
+  box-shadow: 0 1px 22px rgba(0,0,0,0.3);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+form
+{
+  width:inherit;
+  text-align: center;
+}
+
+form input{
+  border-bottom: 2px solid white;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  height:37px;
+  width: 300px;
+  font-family: lato;
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: white;
+  outline:none;
+  background-position-x: right;
+  background-size: auto 20px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-color: rgba(255,255,255,0);
+  resize:none;
+}
+
+#divSoundCloudLink {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  height: 20px;
+  width: auto;
+  right: 3px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.formIcon
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 15px;
+  width: 15px;
+  left: -20px;
+}
+
+#divInput {
+  display: inline-block;
+  position: relative;
+}
+
+
+#footerTheme {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.show {
+  display: block !important;
+}
+
+#slider > div {
+  display: none;
+}
+#slider {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 97%;
+  margin-top: 15px;
+  cursor: pointer;
+}
+#slider img {
+  width: 100%;
+  height: auto;
+}
+#slider p {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Track';
+  font-size: 15px;
+  text-shadow: black 3px 2px 5px;
+  letter-spacing: 0.7px;
+}
+
+#errorMsg {
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.7px;
+}
+
+#defaultTextDiv {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+#defaultTextDiv > *{
+  font-size: 14px;
+  font-family: 'Track';
+  margin-top: 5px;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 26px;
+}
+
+.btnAHrefChallenge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  border: none;
+  box-shadow: 0px 0px 3px 1px black;
+  color: white;
+  text-shadow: black 3px 2px 5px;
+  height: 30px;
+  font-size: 13px;
+  border-radius: 2px;
+  outline: none;
+  letter-spacing: 1px;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: bold;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+#consulte {
+  background-color: rgba(8, 28, 82, 0.7);
+  margin-top: 10px;
+}
+
+#decide {
+  margin-bottom: 5px;
+  background-color: rgba(9, 99, 48, 0.7);
+}
+::ng-deep .soundPresentation {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.imgMedia {
+  width: 75px;
+  height: auto;
+  margin-top: 5px;
+}
+@media(max-width: 1000px) {
+  #slider {
+    width: 95%;
+  }
+  .dateInformation {
+    margin-top: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 13px;
+  }
+  #enteteTheme, .titleTexte, #errorMsg, #slider p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 700px) {
+  #divSoundCloudLink {
+    flex-direction: column;
+  }
+  button {
+    margin-top: 15px;
+    margin-bottom: 7px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #titlePage {
+    margin-top: 50px !important;
+  }
+}
+
+#titlePage {
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.7px;
+  margin-top: 25px;
+  text-shadow: black 3px 2px 5px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,40 @@
+<div class="soundPresentation">
+  <div [class.centerArtist]="_preview" class="artist" #artist>
+    <img class="artistImg" #artistImg (click)="redirectToProfilArtist()">
+    <button [class.invisible]="_preview" (click)="updateVote()" class="vote" #btnVote>
+      <div class="heart heartLeft" #heart></div>
+      Voter
+    </button>
+  </div>
+  <div class="sound">
+    <div class="btnSongDiv">
+      <button class="playSong" (click)="play()" #playSong>
+      </button>
+    </div>
+    <div class="player" (mouseup)="fireevent($event)" #player>
+      <div class="alignSpaceSong">
+        <div class="entete">
+          <div class="infoSong">
+            <div class="userPresentation">
+              <p class="userName" #userName></p>
+            </div>
+            <div class="titlePresentation">
+              <p class="titleSong" #titleSong></p>
+            </div>
+          </div>
+        </div>
+        <div class="songRedirection">
+          <div (click)="openSongUrl()" class="logoSC">
+            <img src="./assets/SoundCloud_logo.png" />
+          </div>
+          <button (click)="openModalPartage()" class="shareSong">Partager</button>
+        </div>
+      </div>
+      <div class="playerProgressDiv">
+        <div class="playerProgress" #playerProgress>
+        </div>
+      </div>
+      <p class="duration" #duration></p>
+    </div>
+  </div>
+</div>

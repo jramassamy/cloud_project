@@ -1,0 +1,7 @@
+<h1 id="titlePage">Tous les challenges du projet</h1>
+<h2 id="descTitle">Toutes les instrus sont consultables 🎼 il te suffit de cliquer sur le thème qui t'intéresse ⬇️</h2>
+<div id="listChallenge" class="hidden">
+  <ng-container *ngFor="let challenge of challengeList; index as i">
+    <app-historique-challenge-template [challengeData]="challenge"></app-historique-challenge-template>
+  </ng-container>
+</div>

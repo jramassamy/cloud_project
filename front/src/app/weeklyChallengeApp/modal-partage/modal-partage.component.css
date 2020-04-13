@@ -1,0 +1,24 @@
+#flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  background-color: black;
+}
+
+#flex a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+}
+
+#facebook img {
+  border-radius: 5px;
+}
+
+.reseauImg {
+  width: inherit;
+  height: inherit;
+}

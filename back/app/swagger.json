@@ -1,0 +1,994 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "Cette API a pour but d'être le back end du projet Creative Beats",
+      "version": "1.0.0",
+      "title": "Swagger Creative Beats",
+      "contact": {
+        "email": "jonathan.ramassamy@u-psud.fr"
+      }
+    },
+    "tags": [
+      {
+        "name": "challengeAPI",
+        "description": "Tout à propos des challenges proposés"
+      },
+      {
+        "name": "user",
+        "description": "Tout à propos des utilisateurs"
+      }
+    ],
+    "paths": {
+      "/challengeAPI/createChallenge": {
+        "post": {
+          "tags": [
+            "/challengeAPI/"
+          ],
+          "summary": "Ajouter un challenge",
+          "operationId": "createChallenge",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Challenge"
+                }
+              }
+            },
+            "description": "Le challenge à créer ",
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/challengeAPI/updateChallenge": {
+        "post": {
+          "tags": [
+            "/challengeAPI/"
+          ],
+          "summary": "Mettre à jour un challenge",
+          "operationId": "updateChallenge",
+          "parameters": [
+            {
+              "in": "header",
+              "name": "token",
+              "description": "Jwt Token",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Challenge"
+                }
+              }
+            },
+            "description": "Les valeurs du challenge à mettre à jour",
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/challengeAPI/getNextChallenge": {
+        "get": {
+          "tags": [
+            "/challengeAPI/"
+          ],
+          "summary": "Récupérer le prochain challenge",
+          "description": "",
+          "operationId": "getNextChallenge",
+          "responses": {
+            "200": {
+              "description": "Un objet challenge",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Challenge"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/challengeAPI/getCurrentChallenge": {
+        "get": {
+          "tags": [
+            "/challengeAPI/"
+          ],
+          "summary": "Récupérer le challenge courant",
+          "description": "",
+          "operationId": "getCurrentChallenge",
+          "responses": {
+            "200": {
+              "description": "Un objet challenge",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Challenge"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/challengeAPI/addParticipant": {
+        "post": {
+          "tags": [
+            "/challengeAPI/"
+          ],
+          "summary": "Ajouter un participant à un challenge",
+          "description": "",
+          "operationId": "addParticipant",
+          "parameters": [
+            {
+              "in": "header",
+              "name": "token",
+              "description": "Jwt Token",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "$ref": "#/components/schemas/User"
+                    },
+                    "soundCloudUrl": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Error on update. | Music already exist. | Utilisateur non connecté.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/challengeAPI/getAllChallenge": {
+        "get": {
+          "tags": [
+            "/challengeAPI/"
+          ],
+          "summary": "Récupérer tous les challenges",
+          "description": "",
+          "operationId": "getAllChallenge",
+          "responses": {
+            "200": {
+              "description": "Une liste de challenges",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Challenge"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/challengeAPI/updateMusicState": {
+        "post": {
+          "tags": [
+            "/challengeAPI/"
+          ],
+          "summary": "Ajouter un challenge",
+          "operationId": "updateMusicState",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "challenge_id": {
+                      "type": "string"
+                    },
+                    "music_id": {
+                      "type": "string"
+                    },
+                    "newState": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Un objet contenant l'id du challenge, l'id de la musique et le nouvel état",
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/challengeAPI/postVote": {
+        "post": {
+          "tags": [
+            "/challengeAPI/"
+          ],
+          "summary": "Poster un vote sur un challenge",
+          "operationId": "postVote",
+          "parameters": [
+            {
+              "in": "header",
+              "name": "token",
+              "description": "Jwt Token",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "challenge_id": {
+                      "type": "string"
+                    },
+                    "music_id": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Un objet contenant l'id du challenge, l'id de la musique et l'utilisateur votant",
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/challengeAPI/getSoundCloudMusic": {
+        "get": {
+          "tags": [
+            "/challengeAPI/"
+          ],
+          "summary": "",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+      "/challengeAPI/getAllFinishedChallenge": {
+        "get": {
+          "tags": [
+            "/challengeAPI/"
+          ],
+          "summary": "Récupérer les challenges finis",
+          "operationId": "getAllFinishedChallenge",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Challenge"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/challengeAPI/getLastFinishedChallenge": {
+        "get": {
+          "tags": [
+            "/challengeAPI/"
+          ],
+          "summary": "Récupérer le dernier challenge fini",
+          "operationId": "getLastFinishedChallenge",
+          "responses": {
+            "200": {
+              "description": "Un objet avec le dernier challenge et l'utilisateur gagnant",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "challenge": {
+                        "$ref": "#/components/schemas/Challenge"
+                      },
+                      "user": {
+                        "$ref": "#/components/schemas/User"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/userAPI/register": {
+        "post": {
+          "tags": [
+            "/userAPI/"
+          ],
+          "summary": "Création d'un utilisateur",
+          "operationId": "register",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            },
+            "description": "Un object user",
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Un objet contenant l'objet user, ses droits et son token Jwt",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "user": {
+                        "$ref": "#/components/schemas/User"
+                      },
+                      "userRights": {
+                        "$ref": "#/components/schemas/UserRights"
+                      },
+                      "token": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/userAPI/login": {
+        "post": {
+          "tags": [
+            "/userAPI/"
+          ],
+          "summary": "Vérifie la connexion d'un utilisateur et le connecte s'il n'est pas connecté",
+          "operationId": "login",
+          "requestBody": {
+            "$ref": "#/components/requestBodies/User"
+          },
+          "responses": {
+            "200": {
+              "description": "Un objet contenant l'objet user, ses droits et son token Jwt",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "user": {
+                        "$ref": "#/components/schemas/User"
+                      },
+                      "userRights": {
+                        "$ref": "#/components/schemas/UserRights"
+                      },
+                      "token": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Mauvais login",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/userAPI/rights": {
+        "get": {
+          "tags": [
+            "/userAPI/"
+          ],
+          "summary": "Récupère la liste des droits d'un utilisateur",
+          "operationId": "rights",
+          "parameters": [
+            {
+              "in": "header",
+              "name": "token",
+              "description": "Jwt Token",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Une liste des droits d'un utilisateur",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/UserRights"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/userAPI/imageProfilUpload": {
+        "post": {
+          "tags": [
+            "/userAPI/"
+          ],
+          "summary": "Operation pour upload l'image de profil d'un utilisateur",
+          "operationId": "imageProfilUpload",
+          "parameters": [
+            {
+              "in": "header",
+              "name": "token",
+              "description": "Jwt Token",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "string",
+                      "format": "byte"
+                    }
+                  }
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/userAPI/update": {
+        "post": {
+          "tags": [
+            "/userAPI/"
+          ],
+          "summary": "Met à jour un utilisateur",
+          "operationId": "update",
+          "parameters": [
+            {
+              "in": "header",
+              "name": "token",
+              "description": "Jwt Token",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/User"
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "success": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/userAPI/addMusic": {
+        "post": {
+          "tags": [
+            "/userAPI/"
+          ],
+          "summary": "Ajouter une musique à un utilisateur",
+          "operationId": "addMusic",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "userTag": {
+                      "type": "string"
+                    },
+                    "userMusic": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "success": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/userAPI/loadUserByTag": {
+        "get": {
+          "tags": [
+            "/userAPI/"
+          ],
+          "summary": "Ajouter une musique à un utilisateur",
+          "operationId": "loadUserByTag",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "userTag": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Un objet contenant une propriété userTag",
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/userAPI/sendMsg": {
+        "post": {
+          "tags": [
+            "/userAPI/"
+          ],
+          "summary": "Envoyer un message",
+          "operationId": "sendMsg",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Message"
+                }
+              }
+            },
+            "description": "Un objet Message",
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400": {
+              "description": "Error"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "requestBodies": {
+        "User": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "description": "Un objet user",
+          "required": true
+        }
+      },
+      "schemas": {
+        "User": {
+          "type": "object",
+          "required": [
+            "_id",
+            "email",
+            "userAlias",
+            "userTag",
+            "userPwd",
+            "userRole",
+            "userPoints",
+            "userDescription",
+            "userLinks",
+            "musics",
+            "userVerified",
+            "telCrypted"
+          ],
+          "properties": {
+            "_id": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "userAlias": {
+              "type": "string"
+            },
+            "userTag": {
+              "type": "string"
+            },
+            "userPwd": {
+              "type": "string",
+              "format": "password"
+            },
+            "userRole": {
+              "type": "string"
+            },
+            "userPoints": {
+              "type": "string"
+            },
+            "userDescription": {
+              "type": "string"
+            },
+            "userLinks": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "musics": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "userVerified": {
+              "type": "boolean"
+            },
+            "telCrypted": {
+              "type": "string"
+            }
+          }
+        },
+        "UserRights": {
+          "type": "object",
+          "required": [
+            "_id",
+            "UTILITAIRE",
+            "FORUM",
+            "CHALLENGE",
+            "HONORED_BEATMAKER"
+          ],
+          "properties": {
+            "_id": {
+              "type": "string"
+            },
+            "UTILITAIRE": {
+              "type": "object",
+              "properties": {
+                "UTILITAIRE_ACCESSADMIN_RIGHTS": {
+                  "type": "boolean"
+                },
+                "UTILITAIRE_UPDATE_USER_ROLE": {
+                  "type": "boolean"
+                },
+                "UTILITAIRE_UPDATE_USER_RIGHT": {
+                  "type": "boolean"
+                },
+                "UTILITAIRE_CREATE_USER": {
+                  "type": "boolean"
+                },
+                "UTILITAIRE_CONSULTATION_MESSAGE": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "FORUM": {
+              "type": "object",
+              "properties": {
+                "FORUM_ACCESSADMIN_RIGHTS": {
+                  "type": "boolean"
+                },
+                "FORUM_CREATE_SECTION": {
+                  "type": "boolean"
+                },
+                "FORUM_DELETE_SECTION": {
+                  "type": "boolean"
+                },
+                "FORUM_CREATE_TOPIC": {
+                  "type": "boolean"
+                },
+                "FORUM_DELETE_TOPIC": {
+                  "type": "boolean"
+                },
+                "FORUM_CREATE_MESSAGE": {
+                  "type": "boolean"
+                },
+                "FORUM_MODERATE_MESSAGE": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "CHALLENGE": {
+              "type": "object",
+              "properties": {
+                "CHALLENGE_ACCESSADMIN_RIGHTS": {
+                  "type": "boolean"
+                },
+                "CHALLENGE_CREATE": {
+                  "type": "boolean"
+                },
+                "CHALLENGE_UPDATE": {
+                  "type": "boolean"
+                },
+                "CHALLENGE_PARTICIPATION": {
+                  "type": "boolean"
+                },
+                "CHALLENGE_MODERATE_PARTICIPATION": {
+                  "type": "boolean"
+                },
+                "CHALLENGE_MODERATE_MESSAGE": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "HONORED_BEATMAKER": {
+              "type": "object",
+              "properties": {
+                "HONORED_BEATMAKER_ACCESSADMIN_RIGHTS": {
+                  "type": "boolean"
+                },
+                "HONORED_BEATMAKER_UPDATE_CURRENT": {
+                  "type": "boolean"
+                },
+                "HONORED_BEATMAKER_UPDATE_CONTENT": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "Challenge": {
+          "type": "object",
+          "required": [
+            "_id",
+            "processCreatif",
+            "debutChallenge",
+            "finChallenge",
+            "challengeArtwork",
+            "challengeName",
+            "challengePrices",
+            "musics",
+            "electeurs"
+          ],
+          "properties": {
+            "_id": {
+              "type": "string"
+            },
+            "processCreatif": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "debutChallenge": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "finChallenge": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "challengeArtwork": {
+              "type": "string"
+            },
+            "challengeName": {
+              "type": "string"
+            },
+            "challengeWinner": {
+              "$ref": "#/components/schemas/User"
+            },
+            "musics": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/MusicChallenge"
+              }
+            }
+          }
+        },
+        "MusicChallenge": {
+          "type": "object",
+          "required": [
+            "user",
+            "musicUrl",
+            "state",
+            "createDate",
+            "vote"
+          ],
+          "properties": {
+            "user": {
+              "$ref": "#/components/schemas/User"
+            },
+            "musicUrl": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "createDate": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "vote": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "Message": {
+          "type": "object",
+          "required": [
+            "name",
+            "mail",
+            "tel",
+            "message"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "mail": {
+              "type": "string"
+            },
+            "tel": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }

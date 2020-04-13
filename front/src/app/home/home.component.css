@@ -1,0 +1,576 @@
+#header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  font-size: 15px;
+  color: white;
+  align-items: center;
+  height: 100px;
+}
+
+#title {
+  text-align: center;
+  font-size: 42px;
+  font-family: 'track';
+  text-shadow: black 3px 2px 5px;
+  color: white;
+}
+
+#divIframeYoutube {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.g-ytsubscribe{
+  border-radius: 3px;
+}
+
+#divIframeYoutube iframe {
+  width: 95%;
+  height: 292px;
+  max-width: 482px;
+  border: 1px solid #000;
+  margin-left: 1px;
+  border-radius: 3px;
+}
+#descTitle {
+  margin-top: 10px;
+  font-size: 17px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btnAHrefChallenge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  border: none;
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  text-shadow: black 3px 2px 5px;
+  height: 30px;
+  font-size: 13px;
+  border-radius: 2px;
+  outline: none;
+  letter-spacing: 1px;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: bold;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+#challengeButtonsDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+#recompenseDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+#mediaRecompenses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding-top: 7px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#crown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
+
+#addImg {
+  width: 22px;
+  height: 22px;
+  margin-left: 12px;
+  margin-right: 12px;
+  font-weight: bold;
+}
+#podium {
+  background: #152254;
+}
+#mediaRecompenses a {
+  width: calc(100%/4 - 15px);
+}
+#mediaRecompenses img {
+  width: 100%;
+  height: auto;
+}
+#pianoChallenge {
+  width: 60px;
+  margin: 0 auto;
+}
+
+.imgMedia {
+  max-width: 75px;
+  border-radius: 100px;
+  width: calc(100% / 5);
+}
+#winnerImg {
+  width: 80px;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#lineChallenge {
+  width: 237.5px;
+  height: 1.5px;
+  border-radius: 30px;
+  background-color: antiquewhite;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#lineAndFollow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100px;
+  min-width: 100px;
+}
+#lineTop {
+  margin-bottom: -8.5px;
+}
+#lineBottom {
+  margin-top: -8.5px;
+}
+.lineBeatmaker {
+  margin-right: 6px;
+  width: 3px;
+  height: 112.5px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 0px 2px black;
+}
+
+#divContentBeatmaker {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-grow: 1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#beatmakerProfil {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: calc(100% / 2);
+}
+#btnParticipation {
+  background-color: rgba(8, 28, 82, 0.7);
+}
+#btnInscription {
+  background-color: rgba(9, 99, 48, 0.7) !important;
+}
+.doubleDiv {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 1035px;
+  margin: 0 auto;
+}
+.doublePresentation {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /*background-color: #071125;*/
+  background-color: #1b2235;
+  border: 1px solid #000;
+  max-width: 450px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 3px;
+}
+
+#infoYoutube {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+.statYt {
+  width: 120px;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.singlePresentation {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #1b2235;
+  min-height: 300px;
+  margin-top: 20px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+.titlePresentation {
+  font-family: 'track';
+  font-size: 27px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.descPresentation {
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+}
+
+#soundContent {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#beatmakerPreviewImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 200px;
+  margin-right: 10px;
+}
+
+#beatmakerProfilDetails {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+#pseudoBeatmaker {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  margin-left: 120px;
+  text-transform: uppercase;
+}
+#concoursBeatmaker {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  margin-left: 120px;
+  color: white;
+  text-transform: uppercase;
+}
+#descBeatmaker {
+  font-size: 17px;
+  letter-spacing: 1px;
+  line-height: 22px;
+  min-width: calc(100% - 125px);
+  width:calc(100% - 125px); /*img + 25px*/
+  max-height: 200px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+#followBeatmaker {
+  width: 75px;
+}
+
+.txtReseaux {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.txtReseaux > p {
+  font-family: 'track';
+  font-size: 15px;
+  margin-left: 5px;
+  letter-spacing: 1px;
+}
+
+
+#reseaux {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: -15px;
+  height: 200px;
+}
+
+.alignMedia {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 390px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.alignReseaux {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.alignMedia img {
+  width: 40px;
+  border-radius: 200px;
+}
+
+.alignReseaux img {
+  width: 45px;
+  border-radius: 200px;
+}
+
+#lineReseauMedia {
+  width: 100%;
+  margin-top:10px;
+  margin-bottom: 5px;
+}
+#lineReseauMedia ::ng-deep .artist {
+  display: none;
+}
+#lineReseauMedia ::ng-deep .soundPresentation{
+  margin: 0;
+}
+#lineReseauMedia ::ng-deep .sound {
+  margin: 0;
+}
+#videoImg {
+  width: 55px;
+  margin-left: 13px;
+  margin-right: 9px;
+}
+
+#youtubeReseau {
+  margin-right: 5px;
+}
+
+#forumDiv {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+#forumDiv a {
+  width: calc(100% / 3 - 20px);
+  margin: 0 auto;
+  position: relative;
+  opacity: 0;
+}
+#forumDiv a img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+@media (max-width: 1420px) {
+  .doubleDiv {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+  }
+  .doublePresentation {
+    margin-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media(max-width:1250px) {
+  .marginDefaultWinner {
+    margin-left: 0 !important;
+  }
+
+  .alignReseaux {
+    width: 95%;
+    margin: 0;
+  }
+  #divContentBeatmaker {
+    padding: 0;
+  }
+  #header {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 50px;
+    height: initial;
+  }
+
+  #challengeButtonsDiv {
+    margin-top: 5px;
+  }
+  #recompenseDiv {
+    margin-top: 0;
+  }
+  #descTitle {
+    padding: 5px;
+  }
+
+  .titlePresentation {
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-bottom: 10px;
+  }
+
+  .singlePresentation {
+    min-height: 200px;
+  }
+
+  #divContentBeatmaker {
+    flex-direction: column;
+  }
+
+  #beatmakerProfilDetails {
+    flex-direction: column;
+  }
+
+  #pseudoBeatmaker {
+    font-size: 21px;
+    margin-left: 0;
+  }
+
+  #concoursBeatmaker {
+    margin-left: 0;
+  }
+
+  #beatmakerPreviewImg {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  #beatmakerProfil, #descBeatmaker {
+    width: 100%;
+    font-size: 15px;
+    max-height: unset;
+    overflow-y: unset;
+  }
+  #lineAndFollow {
+    flex-direction: row;
+    margin-left: 0;
+    width: 100%;
+    min-width: unset;
+  }
+  .lineBeatmaker {
+    width: calc(50% - 100px);
+    height: 2px;
+  }
+  #lineTop, #lineBottom {
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-top: -13px;
+  }
+  #lineTop {
+    margin-right: 5px;
+  }
+  #lineBottom {
+    margin-left: 5px;
+  }
+  #reseaux {
+    padding-right: 0;
+    margin-top: 10px;
+  }
+
+}
+
+
+@media(max-width: 1000px) {
+  #forumDiv {
+    flex-direction: column;
+  }
+  #forumDiv a {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 7px;
+    margin-bottom: 7px;
+  }
+  .button {
+    font-size: 11px;
+  }
+
+  #lineChallenge {
+    width: 197.5px;
+  }
+
+  #title {
+    font-size: 25px;
+    letter-spacing: 1px;
+  }
+  #descTitle {
+    line-height: 20px;
+    font-size: 14px;
+  }
+
+  .descPresentation, #beatmakerProfil, #descBeatmaker {
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .titlePresentation {
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 1px;
+  }
+}
+
+.inactive {
+  pointer-events: none;
+}
+.inactive img {
+  opacity: 0.5;
+}
+
+.marginDefaultWinner {
+  margin-left: 120px;
+}
+
+@media(max-width: 500px) {
+  #divIframeYoutube iframe {
+    height: 265px;
+  }
+}
+
+h1 {
+  display: inline;
+}
+#txtAfterH1 {
+  display: inline;
+}
+
+@media(max-width: 320px) {  
+  #title {
+    font-size: 20px;
+  }
+}

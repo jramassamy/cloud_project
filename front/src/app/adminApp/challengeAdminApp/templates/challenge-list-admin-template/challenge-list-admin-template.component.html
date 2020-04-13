@@ -1,0 +1,119 @@
+<div *ngIf="_challengeData" id="topic">
+  <div id="top">
+    <p id="titleTopic">{{_challengeData.challengeName | uppercase}}</p>
+    <div id="divPanelButton">
+      <img (click)="showHideUpdate()" src="./assets/pencil.svg">
+      <img (click)="showHideMusics()" src="./assets/eye.svg">
+    </div>
+  </div>
+  <div id="infoProcess">
+    <div id="sujet">
+      <p>Début du process créatif:</p>
+      <p>Le
+        {{_challengeData.processCreatif | date:'d MMMM' | titlecase}} à
+        {{_challengeData.processCreatif | date:'HH:mm'}}</p>
+    </div>
+    <div id="participant">
+      <p>Début du challenge:</p>
+      <p>Le
+        {{_challengeData.debutChallenge | date:'d MMMM' | titlecase}} à
+        {{_challengeData.debutChallenge | date:'HH:mm'}}</p>
+    </div>
+    <div id="messages">
+      <p>Fin du challenge:</p>
+      <p>Le
+        {{_challengeData.finChallenge | date:'d MMMM' | titlecase}} à
+        {{_challengeData.finChallenge | date:'HH:mm'}}
+      </p>
+    </div>
+    <div id="lastParticipant">
+      <p>Musique(s) en attente: {{_challengeData.waitingValidation}}</p>
+      <p>Musique(s) rejetée(s): {{_challengeData.musicRejected}}</p>
+      <p>Musique(s) approuvée(s): {{_challengeData.musicApproved}}</p>
+    </div>
+  </div>
+</div>
+<form *ngIf="updateViewingState" id="challengeForm" #challengeForm="ngForm" #challengeFormView
+  (ngSubmit)="onSubmitUpdateChallenge(challengeForm)">
+  <div>
+    <input [(ngModel)]="challengeDataForm.processCreatif" name="processCreatif" type="datetime-local"
+      placeholder="date début process creatif" id="processCreatif" required #processCreatif="ngModel">
+    <img *ngIf="processCreatif.errors && (processCreatif.value || processCreatif.dirty)" src="./assets/cross.svg"
+      class="formIcon" />
+    <img *ngIf="!processCreatif.errors" src="./assets/check.svg" class="formIcon" />
+  </div>
+  <div>
+    <input [(ngModel)]="challengeDataForm.debutChallenge" id="debutChallenge" name="debutChallenge"
+      type="datetime-local" placeholder="date de début du challenge (votes possibles)" required
+      #debutChallenge="ngModel">
+    <img *ngIf="debutChallenge.errors && (debutChallenge.value || debutChallenge.dirty)" src="./assets/cross.svg"
+      class="formIcon" />
+    <img *ngIf="!debutChallenge.errors" src="./assets/check.svg" class="formIcon" />
+  </div>
+  <div>
+    <input [(ngModel)]="challengeDataForm.finChallenge" id="finChallenge" name="finChallenge" type="datetime-local"
+      placeholder="date de fin du challenge" required #finChallenge="ngModel">
+    <img *ngIf="finChallenge.errors && (finChallenge.value || finChallenge.dirty)" src="./assets/cross.svg"
+      class="formIcon" />
+    <img *ngIf="!finChallenge.errors" src="./assets/check.svg" class="formIcon" />
+  </div>
+  <div>
+    <input [(ngModel)]="challengeDataForm.challengeArtwork" id="challengeArtwork" name="challengeArtwork" type="text"
+      placeholder="url de l'artwork" required #challengeArtwork="ngModel">
+    <img src="./assets/text.svg" class="inputIcon" />
+    <img *ngIf="challengeArtwork.errors && (challengeArtwork.value || challengeArtwork.dirty)" src="./assets/cross.svg"
+      class="formIcon" />
+    <img *ngIf="!challengeArtwork.errors" src="./assets/check.svg" class="formIcon" />
+  </div>
+  <div>
+    <input [(ngModel)]="challengeDataForm.challengeName" id="challengeName" name="challengeName" type="text"
+      placeholder="nom du challenge" required #challengeName="ngModel" minlength="3">
+    <img src="./assets/text.svg" class="inputIcon" />
+    <img *ngIf="challengeName.errors && (challengeName.value || challengeName.dirty)" src="./assets/cross.svg"
+      class="formIcon" />
+    <img *ngIf="!challengeName.errors" src="./assets/check.svg" class="formIcon" />
+  </div>
+  <div>
+    <input [(ngModel)]="challengeDataForm.challengePrices.first" id="first" name="first" type="text"
+      placeholder="lot 1ere place" required #first="ngModel" minlength="3">
+    <img src="./assets/text.svg" class="inputIcon" />
+    <img *ngIf="first.errors && (first.value || first.dirty)" src="./assets/cross.svg" class="formIcon" />
+    <img *ngIf="!first.errors" src="./assets/check.svg" class="formIcon" />
+  </div>
+  <div>
+    <input [(ngModel)]="challengeDataForm.challengePrices.second" id="second" name="second" type="text"
+      placeholder="lot 2eme place" #second="ngModel" minlength="3">
+    <img src="./assets/text.svg" class="inputIcon" />
+    <img *ngIf="second.errors && (second.value || second.dirty)" src="./assets/cross.svg" class="formIcon" />
+    <img *ngIf="!second.errors" src="./assets/check.svg" class="formIcon" />
+  </div>
+  <div>
+    <input [(ngModel)]="challengeDataForm.challengePrices.third" id="third" name="third" type="text"
+      placeholder="lot 3eme place" #third="ngModel" minlength="3">
+    <img src="./assets/text.svg" class="inputIcon" />
+    <img *ngIf="third.errors && (third.value || third.dirty)" src="./assets/cross.svg" class="formIcon" />
+    <img *ngIf="!third.errors" src="./assets/check.svg" class="formIcon" />
+  </div>
+  <div id="divBtnForm">
+    <button type="submit">ENVOYER</button>
+    <span class="errorMsg" *ngIf="error.challenge">{{error.challenge}}</span>
+  </div>
+</form>
+<div *ngIf="listMusicState">
+  <ng-container *ngFor="let artistSound of _challengeData.musics">
+    <p class="listMusicText">Auteur: {{artistSound.user.userAlias}}, Vote: {{artistSound.vote}}</p>
+    <p class="listMusicText">Aperçu Musique:
+      <a target="blank" href="{{artistSound.musicUrl}}">{{artistSound.musicUrl}}</a></p>
+    <div id="listMusicButtons">
+      <div (click)="updateState('waitingValidation', artistSound)"
+        [class.btnActive]="artistSound.state === 'waitingValidation'">En
+        Attente</div>
+      <div (click)="updateState('approved', artistSound)" [class.btnActive]="artistSound.state === 'approved'">Approuver
+      </div>
+      <div (click)="updateState('rejected', artistSound)" [class.btnActive]="artistSound.state === 'rejected'">Rejeter
+      </div>
+    </div>
+    <app-sound-cloud-music [preview]="true" [electeurData]="null" [artistSound]="artistSound" [challengeId]="null">
+    </app-sound-cloud-music>
+  </ng-container>
+</div>

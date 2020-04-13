@@ -1,0 +1,51 @@
+{
+  "name": "backEnd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dir/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./dir/server.js",
+    "start-ts": "ts-node --require dotenv/config ./app/server.ts",
+    "start-serverless-local": "cd dir && serverless offline --skipCacheInvalidation",
+    "build-start-serverless-local": "npm run build-serverless && npm run start-serverless-local",
+    "deploy-serverless-production": "npm run build-serverless && cd dir && serverless deploy --stage production",
+    "deploy-serverless-dev": "npm run build-serverless && cd dir && serverless deploy --stage dev",
+    "build-serverless": "npm run build && npm run dependancies",
+    "build": "tsc",
+    "dependancies": "copy .\\serverless.yml .\\dir\\ && xcopy /E .\\node_modules .\\dir\\node_modules\\ /EXCLUDE:excludeServerlessModules.txt"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.4",
+    "aws-sdk": "^2.422.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "chromedriver": "^78.0.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "log4js": "^6.1.2",
+    "md5": "^2.2.1",
+    "mongoose": "^5.4.1",
+    "multer": "^1.4.1",
+    "mz": "^2.7.0",
+    "node-gyp": "^3.8.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5",
+    "selenium-webdriver": "^4.0.0-alpha.5",
+    "serverless-http": "^1.9.1",
+    "serverless-webpack": "^5.2.0",
+    "swagger-ui-express": "^4.1.4",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.4.5",
+    "webpack": "^4.29.5"
+  },
+  "devDependencies": {
+    "serverless-offline": "^4.6.0"
+  }
+}

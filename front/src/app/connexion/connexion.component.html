@@ -1,0 +1,116 @@
+<div id="centerContent">
+  <div id="infoContainerMobile">
+    <div id="connectAccountMobile">
+      <p class="titleChoice">VOUS ÊTES DÉJÀ INSCRIT ?</p>
+      <p class="desc">N'hésitez pas à participer à nos challenges et à faire vos retours, en participant, vous
+        permettez l'évolution de la plateforme, grâce à vous, nôtre communauté ne cesse de grandir.</p>
+      <div>
+        <button (click)="changeState(false, true)" class="btnChoice">SE CONNECTER</button>
+      </div>
+    </div>
+    <div id="createAccountMobile">
+      <p class="titleChoice">VOUS N'ÊTES PAS ENCORE INSCRIT ?</p>
+      <p class="desc">S'inscrire permet de participer aux différents challenges,
+        vous aurez aussi la possibilité de choisir les prochaines évolutions à venir
+        selon vos envies.</p>
+      <div>
+        <button (click)="changeState(false, true)" class="btnChoice btnOpaque">CREER UN COMPTE</button>
+      </div>
+    </div>
+  </div>
+  <div id="connexionContainer">
+    <div id="connectAccount">
+      <p class="titleChoice">VOUS ÊTES DÉJÀ INSCRIT ?</p>
+      <p class="desc">N'hésitez pas à participer à nos challenges et à faire vos retours, en participant, vous
+        permettez l'évolution de la plateforme, grâce à vous, nôtre communauté ne cesse de grandir.</p>
+      <div>
+        <button (click)="changeState(true, true)" class="btnChoice">SE CONNECTER</button>
+      </div>
+    </div>
+    <div id="createAccount">
+      <p class="titleChoice">VOUS N'ÊTES PAS ENCORE INSCRIT ?</p>
+      <p class="desc">S'inscrire permet de participer aux différents challenges,
+        vous aurez aussi la possibilité de choisir les prochaines évolutions à venir
+        selon vos envies.</p>
+      <div>
+        <button (click)="changeState(true, true)" class="btnChoice btnOpaque">CREER UN COMPTE</button>
+      </div>
+    </div>
+    <div id="panel">
+      <div *ngIf="initialPosition" id="divConnexion">
+        <h1 class="titleForm">Connexion</h1>
+        <div id="formConnexionDiv">
+          <form #connexionForm="ngForm" (ngSubmit)="onSubmitConnexion(connexionForm)">
+            <div class="formDiv">
+              <input [(ngModel)]="userFormData.email" name="mailConnexion" type="text" placeholder="Email" id="EmailCo"
+                email="true" required #EmailCo="ngModel">
+              <img src="./assets/mailIcon.svg" class="inputIcon" />
+              <img *ngIf="EmailCo.errors && EmailCo.value" src="./assets/cross.svg" class="formIcon" />
+              <img *ngIf="!EmailCo.errors" src="./assets/check.svg" class="formIcon" />
+            </div>
+            <div class="formDiv">
+              <input [(ngModel)]="userFormData.userPwd" name="pwdConnexion" type="password" placeholder="Mot de passe"
+                id="PwdCo" required minlength="4" #PwdCo="ngModel">
+              <img src="./assets/pwdIcon.svg" class="inputIcon" />
+              <img *ngIf="PwdCo.errors && PwdCo.value" src="./assets/cross.svg" class="formIcon" />
+              <img *ngIf="!PwdCo.errors" src="./assets/check.svg" class="formIcon" />
+            </div>
+            <div class="captcha">
+              <re-captcha [(ngModel)]="connexionForm.captcha" name="captcha" required siteKey="{{key}}"></re-captcha>
+            </div>
+            <div class="formDiv">
+              <button type="submit">Se Connecter</button>
+            </div>
+            <p class="errorMsg" *ngIf="error.connexion">{{error.connexion}}</p>
+          </form>
+        </div>
+      </div>
+      <div *ngIf="!initialPosition" id="divInscription">
+        <p class="titleForm">Inscription</p>
+        <div id="formInscriptionDiv">
+          <form #inscriptionForm="ngForm" (ngSubmit)="onSubmitInscription(inscriptionForm)">
+            <div class="formDiv">
+              <input [(ngModel)]="userFormData.userAlias" type="text" name="pseudoInscription" placeholder="Pseudonyme"
+                id="pseudoIn" required [pattern]="userAliasPattern" #pseudoIn="ngModel">
+              <img src="./assets/userIcon.svg" class="inputIcon" />
+              <img *ngIf="pseudoIn.errors && (pseudoIn.value || pseudoIn.dirty)" src="./assets/cross.svg"
+                class="formIcon" />
+              <img *ngIf="!pseudoIn.errors" src="./assets/check.svg" class="formIcon" />
+            </div>
+            <div class="formDiv">
+              <input [(ngModel)]="userFormData.email" type="text" name="mailInscription" placeholder="Email"
+                id="emailIn" email="true" required #mailIn="ngModel">
+              <img src="./assets/mailIcon.svg" class="inputIcon" />
+              <img *ngIf="mailIn.errors && (mailIn.value || mailIn.dirty)" src="./assets/cross.svg" class="formIcon" />
+              <img *ngIf="!mailIn.errors" src="./assets/check.svg" class="formIcon" />
+            </div>
+            <div class="formDiv">
+              <input [(ngModel)]="userFormData.userPwd" type="password" name="pwdInscription" placeholder="Mot de passe"
+                id="pwdIn" required minlength="4" #pwdIn="ngModel">
+              <img src="./assets/pwdIcon.svg" class="inputIcon" />
+              <img *ngIf="pwdIn.errors && (pwdIn.value || pwdIn.dirty)" src="./assets/cross.svg" class="formIcon" />
+              <img *ngIf="!pwdIn.errors" src="./assets/check.svg" class="formIcon" />
+            </div>
+            <div class="formDiv">
+              <input [(ngModel)]="userFormData.userLinks.userSoundcloud" type="text" name="soundcloudInscription"
+                placeholder="Pseudo Soundcloud (Optionnel)" [pattern]="soundCloudPattern" id="scIn" #scIn="ngModel">
+              <img src="./assets/soundIcon.svg" class="inputIcon" />
+              <img *ngIf="scIn.errors" src="./assets/cross.svg" class="formIcon" />
+              <img *ngIf="!scIn.errors" src="./assets/check.svg" class="formIcon" />
+            </div>
+            <div>
+              <div class="captcha">
+                <re-captcha [(ngModel)]="inscriptionForm.captcha" name="captcha" required siteKey="{{key}}">
+                </re-captcha>
+              </div>
+              <div class="formDiv">
+                <button type="submit">S'inscrire</button>
+              </div>
+              <p class="errorMsg" *ngIf="error.inscription">{{error.inscription}}</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

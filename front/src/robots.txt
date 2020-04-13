@@ -1,0 +1,3 @@
+Sitemap: https://creativebeats.fr/sitemap.xml
+User-agent:*
+Disallow:

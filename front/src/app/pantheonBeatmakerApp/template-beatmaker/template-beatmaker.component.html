@@ -1,0 +1,48 @@
+<div class="beatmakerPresentation">
+  <div id="divContentBeatmaker">
+    <div id="beatmakerProfil">
+      <p *ngIf="loaded" id="pseudoBeatmaker">{{winnerProfile.userAlias}}</p>
+      <p *ngIf="loaded" id="concoursBeatmaker">GAGNANT DU CONCOURS {{_challenge.challengeName}},
+        {{_challenge.debutChallenge| date:'d MMMM' | uppercase}}</p>
+      <div id="beatmakerProfilDetails">
+        <img *ngIf="userImage" [src]="userImage" id="beatmakerPreviewImg">
+        <p *ngIf="loaded" id="descBeatmaker">{{winnerProfile.userDescription}}</p>
+      </div>
+    </div>
+    <div id="lineAndFollow">
+      <div id="lineTop" class="lineBeatmaker"></div>
+      <img src="./assets/followBlueWhite.svg" id="followBeatmaker">
+      <div id="lineBottom" class="lineBeatmaker"></div>
+    </div>
+    <div id="reseaux">
+      <div class="alignReseaux">
+        <div class="txtReseaux">
+          <img src="./assets/homeImages/facebook.svg" class="reseauImg">
+        </div>
+        <div class="txtReseaux">
+          <img src="./assets/homeImages/instagram.svg" class="reseauImg">
+        </div>
+        <div class="txtReseaux">
+          <img src="./assets/homeImages/snapchat.svg" class="reseauImg">
+        </div>
+        <div class="txtReseaux">
+          <img src="./assets/homeImages/twitter.svg" class="reseauImg">
+        </div>
+      </div>
+      <div id="lineReseauMedia">
+        <app-sound-cloud-music *ngIf="winner" [image]="false" [preview]="true" [artistSound]="winner.musicUrl">
+        </app-sound-cloud-music>
+      </div>
+      <div class="alignMedia">
+        <div class="txtReseaux">
+          <img src="./assets/homeImages/soundcloud.svg" class="reseauImg">
+          <p>Soundcloud</p>
+        </div>
+        <div class="txtReseaux">
+          <p id="youtubeReseau">Youtube</p>
+          <img src="./assets/youtube.svg" class="reseauImg">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

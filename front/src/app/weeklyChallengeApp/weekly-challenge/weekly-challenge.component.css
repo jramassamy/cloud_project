@@ -1,0 +1,144 @@
+#contentTitle
+{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top:25px;
+  color:white;
+}
+
+#rightLine img
+{
+  transform: rotate(180deg);
+}
+#rightLine
+{
+  max-width: calc((100% - 220px) / 2);
+  width: 100%;
+  margin-left:5px;
+  text-align: left;
+}
+#leftLine
+{
+  max-width: calc((100% - 230px) / 2);
+  width: 100%;
+  margin-right:5px;
+  text-align: right;
+}
+
+#rightLine img, #leftLine img {
+  max-width: 100%;
+}
+
+#contentTitle p{
+  font-family: brightshine;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 45px;
+}
+
+#soundContent, #soundArtist {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#soundContent {
+  flex-direction: row;
+  margin-top: 10px;
+}
+#soundArtist {
+  flex-direction: column;
+  margin-top: 30px;
+}
+#artistName {
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: rgba(0,0,0,0.7);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#lineArtist {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.7);
+  background: white;
+  border-radius: 100px;
+  opacity: 0.5;
+}
+
+#challengeArtwork {
+    width: 215px;
+    height: 100px;
+}
+
+.voteInformation{
+  width: 280px;
+  font-size: 17px;
+  font-weight: bold;
+  text-shadow: black 3px 2px 5px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+#defaultTextDiv {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin-top: 35px;
+}
+#defaultTextDiv *{
+  font-size: 14px;
+  font-family: 'Track';
+  margin-top: 5px;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 26px;
+}
+
+#defaultTextDiv a {
+  border-bottom: 1px solid antiquewhite;
+}
+
+@media(max-width: 1000px) {
+  .voteInformation {
+    text-align: center;
+    margin: 0 auto !important;
+    margin-top: 50px !important;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  #contentTitle {
+    margin-top: 10px;
+  }
+  :host ::ng-deep app-sound-cloud-music {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  #titlePage {
+    margin-top: 50px !important;
+  }
+}
+
+#titlePage {
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.7px;
+  margin-top: 25px;
+  text-shadow: black 3px 2px 5px;
+  text-transform: uppercase;
+}

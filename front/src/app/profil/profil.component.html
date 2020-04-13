@@ -1,0 +1,135 @@
+<ng-container *ngIf="loaded">
+  <div id="profilDiv">
+    <div id="userImgDiv">
+      <img id="leftLine" src="./assets/line.png" class="line">
+      <div id="userImgContainer">
+        <input *ngIf="canUpdate" type="file" (change)="previewFile()" #fileInput>
+        <img *ngIf="userImage" id="userImg" [src]="userImage">
+        <p *ngIf="canUpdate" id="userAddImg">+</p>
+      </div>
+      <img id="rightLine" src="./assets/line.png" class="line">
+    </div>
+    <p *ngIf="errorImageMsg" style="color:red">{{errorImageMsg}}</p>
+    <div id="contentEnteteProfil">
+      <p id="userName">{{userProfil.userAlias}}</p>
+      <hr class="lineTitle" />
+      <div id="titleUserDiv">
+        <img src="./assets/profilImages/levelicon.png">
+        <p id="titleUserContent">{{userProfil.userRole}}</p>
+      </div>
+      <hr class="lineTitle" />
+      <a class="hrefButton" id="contacter" href="mailto:{{userProfil.email}}">CONTACTER</a>
+    </div>
+    <div id="listActionProfil">
+      <div (click)="updateShowState(true)" class="flexDivProfil">
+        <div class="divImgAction" id="profilAction">
+          <img id="userImgAction" src="./assets/profilImages/user.png">
+        </div>
+        <p id="textProfil">Profil</p>
+      </div>
+      <div (click)="updateShowState(false)" class="flexDivProfil">
+        <div class="divImgAction">
+          <img id="compoImgAction" src="./assets/homeImages/video.svg">
+        </div>
+        <p>Compositions</p>
+      </div>
+    </div>
+    <div id="contentProfil" *ngIf="showProfil">
+      <div id="flexColumn">
+        <div class="divMediaReseau" id="reseaux">
+          <div class="containerMR">
+            <p id="textReseau">RESEAUX</p>
+            <hr id="lineReseau" />
+          </div>
+          <div class="txtReseaux">
+            <a [class.inactive]="!userProfil.userLinks.userFacebook" target="_blank"
+              href="https://www.facebook.com/{{userProfil.userLinks.userFacebook}}" class="flex">
+              <img src="./assets/homeImages/facebook.svg" class="reseauImg">
+              <p>Facebook</p>
+            </a>
+            <input [(ngModel)]="userProfil.userLinks.userFacebook" placeholder="creativebeats.fr"
+              *ngIf="showUpdateInputs" type="text">
+          </div>
+          <div class="txtReseaux">
+            <a [class.inactive]="!userProfil.userLinks.userInstagram" target="_blank"
+              href="https://www.instagram.com/{{userProfil.userLinks.userInstagram}}" class="flex">
+              <img src="./assets/homeImages/instagram.svg" class="reseauImg">
+              <p>Instagram</p>
+            </a>
+            <input [(ngModel)]="userProfil.userLinks.userInstagram" placeholder="creativebeatsfr"
+              *ngIf="showUpdateInputs" type="text">
+          </div>
+          <div class="txtReseaux">
+            <a [class.inactive]="!userProfil.userLinks.userSnapchat" target="_blank"
+              href="https://www.snapchat.com/add/{{userProfil.userLinks.userSnapchat}}" class="flex">
+              <img placeholder="creativeBeats" src="./assets/homeImages/snapchat.svg" class="reseauImg">
+              <p>Snapchat</p>
+            </a>
+            <input [(ngModel)]="userProfil.userLinks.userSnapchat" placeholder="jonathanrsy" *ngIf="showUpdateInputs"
+              type="text">
+          </div>
+          <div class="txtReseaux">
+            <a [class.inactive]="!userProfil.userLinks.userTwitter" target="_blank"
+              href="https://twitter.com/{{userProfil.userLinks.userTwitter}}" class="flex">
+              <img src="./assets/homeImages/twitter.svg" class="reseauImg">
+              <p>Twitter</p>
+            </a>
+            <input [(ngModel)]="userProfil.userLinks.userTwitter" placeholder="creativebeatsfr" *ngIf="showUpdateInputs"
+              type="text">
+          </div>
+        </div>
+        <div class="divMediaReseau" id="medias">
+          <div class="containerMR">
+            <p id="textMedia">MÉDIAS</p>
+            <hr id="lineMedia" />
+          </div>
+          <div class="txtReseaux">
+            <a [class.inactive]="!userProfil.userLinks.userSoundcloud" target="_blank"
+              href="https://soundcloud.com/{{userProfil.userLinks.userSoundcloud}}" class="flex">
+              <img src="./assets/homeImages/soundcloud.svg" class="reseauImg">
+              <p>Soundcloud</p>
+            </a>
+            <input [(ngModel)]="userProfil.userLinks.userSoundcloud" placeholder="creativebeatsfr"
+              *ngIf="showUpdateInputs" type="text">
+          </div>
+          <div class="txtReseaux">
+            <a [class.inactive]="!userProfil.userLinks.userYoutube" target="_blank"
+              href="https://www.youtube.com/channel/{{userProfil.userLinks.userYoutube}}" class="flex">
+              <img href="" src="./assets/youtube.svg" class="reseauImg">
+              <p id="youtubeReseau">Youtube</p>
+            </a>
+            <input [(ngModel)]="userProfil.userLinks.userYoutube" placeholder="UCPoF3pEhRliHIOsHaITTXqA"
+              *ngIf="showUpdateInputs" type="text">
+          </div>
+        </div>
+      </div>
+      <div id="descDiv">
+        <div *ngIf="canUpdate" class="updateProfil" (click)="showUpdate()">
+          <img src="./assets/pencil.svg">
+        </div>
+        <div *ngIf="canUpdate && showUpdateInputs" class="saveProfil" (click)="sendUpdate()">
+          <img src="./assets/check.svg">
+        </div>
+        <p class="descEntete">Description</p>
+        <textarea id="contentDesc" [(ngModel)]="userProfil.userDescription" [class.updateDesc]="showUpdateInputs"
+          [readonly]="!showUpdateInputs"></textarea>
+      </div>
+    </div>
+    <div id="contentComposition" *ngIf="!showProfil">
+      <p class="descEntete">Liste des compositions de l'artiste</p>
+      <p class="descAddMusic" *ngIf="canUpdate">Ajouter une nouvelle musique:</p>
+      <div *ngIf="canUpdate" class="flex">
+        <input [(ngModel)]="musicToAdd" placeholder="https://soundcloud.com/user/music" *ngIf="canUpdate" type="text">
+        <div *ngIf="musicToAdd" class="saveMusic" (click)="addMusic()">
+          <img src="./assets/check.svg">
+        </div>
+      </div>
+      <p id="errorMusic" *ngIf="errorSoundcloudUrl">{{errorSoundcloudUrl}}</p>
+      <ng-container>
+        <ng-container *ngFor="let artistSound of userProfil.musics">
+          <app-sound-cloud-music [preview]="true" [artistSound]="artistSound"></app-sound-cloud-music>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

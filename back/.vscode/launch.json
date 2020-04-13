@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug node",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/ts-node/dist/bin.js",
+            "args": [
+                "${workspaceRoot}/app/server.ts"
+            ],
+            "envFile": "${workspaceRoot}/.env",
+            "restart": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+        }
+    ]
+}

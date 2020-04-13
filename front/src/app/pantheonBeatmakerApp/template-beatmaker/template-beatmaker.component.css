@@ -1,0 +1,261 @@
+
+#lineAndFollow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100px;
+  min-width: 100px;
+  height: 200px;
+}
+#lineTop {
+  margin-bottom: -8.5px;
+}
+#lineBottom {
+  margin-top: -8.5px;
+}
+.lineBeatmaker {
+  margin-right: 6px;
+  width: 3px;
+  height: 112.5px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 0px 2px black;
+}
+
+#divContentBeatmaker {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-grow: 1;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#beatmakerProfil {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: calc(100% / 2);
+  height: 200px;
+}
+
+.beatmakerPresentation {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.1);
+  box-shadow: 0 0px 2px rgba(0,0,0,1);
+  margin-top: 20px;
+}
+.titleBeatmakerPresentation {
+  font-family: 'track';
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-shadow: black 3px 2px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: antiquewhite;
+}
+
+#beatmakerPreviewImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 200px;
+  margin-right: 10px;
+}
+
+#beatmakerProfilDetails {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+#pseudoBeatmaker {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  margin-left: 120px;
+  text-shadow: black 3px 2px 5px;
+  text-transform: uppercase;
+}
+#concoursBeatmaker {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  margin-left: 120px;
+  text-shadow: black 3px 2px 5px;
+  color: antiquewhite;
+}
+#descBeatmaker {
+  font-size: 17px;
+  text-shadow: black 3px 2px 5px;
+  letter-spacing: 1px;
+  line-height: 22px;
+  width:calc(100% - 125px); /*img + 25px*/
+  max-height: 130px;
+  overflow-y: auto;
+}
+
+#followBeatmaker {
+  width: 75px;
+}
+
+.txtReseaux {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.txtReseaux > p {
+  font-family: 'track';
+  font-size: 15px;
+  margin-left: 5px;
+  letter-spacing: 1px;
+}
+
+
+#reseaux {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 200px;
+}
+
+.alignMedia {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 390px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.alignReseaux {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.alignMedia img {
+  width: 40px;
+  border-radius: 200px;
+}
+
+.alignReseaux img {
+  width: 45px;
+  border-radius: 200px;
+}
+
+#lineReseauMedia {
+  width: 100%;
+  margin-top:10px;
+  margin-bottom: 5px;
+}
+#lineReseauMedia ::ng-deep .artist {
+  display: none;
+}
+#lineReseauMedia ::ng-deep .soundPresentation{
+  margin: 0;
+}
+#lineReseauMedia ::ng-deep .sound {
+  margin: 0;
+}
+
+#youtubeReseau {
+  margin-right: 5px;
+}
+@media(max-width:1250px) {
+
+  .alignReseaux {
+    width: 95%;
+    margin: 0;
+  }
+  #divContentBeatmaker {
+    padding: 0;
+  }
+
+  .titleBeatmakerPresentation {
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-bottom: 10px;
+  }
+  .beatmakerPresentation {
+    min-height: 200px;
+  }
+  #divContentBeatmaker {
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  #beatmakerProfilDetails {
+    flex-direction: column;
+  }
+
+  #pseudoBeatmaker {
+    font-size: 21px;
+    margin-left: 0;
+  }
+  #concoursBeatmaker {
+    margin-left: 0;
+  }
+  #beatmakerPreviewImg {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  #beatmakerProfil, #descBeatmaker {
+    width: 100%;
+    font-size: 15px;
+    max-height: unset;
+    overflow-y: unset;
+  }
+  #lineAndFollow {
+    flex-direction: row;
+    margin-left: 0;
+    width: 100%;
+    min-width: unset;
+  }
+  .lineBeatmaker {
+    width: calc(50% - 100px);
+    height: 2px;
+  }
+  #lineTop, #lineBottom {
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-top: -13px;
+  }
+  #lineTop {
+    margin-right: 5px;
+  }
+  #lineBottom {
+    margin-left: 5px;
+  }
+  #reseaux {
+    padding-right: 0;
+    margin-top: 10px;
+  }
+
+}
+
+
+@media(max-width: 1000px) {
+  .titleBeatmakerPresentation {
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 1px;
+  }
+
+  #beatmakerProfil, #descBeatmaker {
+    font-size: 15px;
+  }
+}

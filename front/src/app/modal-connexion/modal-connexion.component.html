@@ -1,0 +1,78 @@
+<div id="mainDialog">
+  <div id="header">
+    <ul>
+      <ng-container *ngIf="enteteId === 1">
+        <li class="one"><a (click)="updateContentId(1)">Connexion</a></li>
+        <li class="two" id="inscriptionDiv"><a (click)="updateContentId(2)">Inscription</a></li>
+      </ng-container>
+      <hr [class.hrOnTwo]="contentId === 2 && enteteId === 1" [class.hrOnTwoVote]="contentId === 1 && enteteId === 2" id="hoverHeader" />
+    </ul>
+  </div>
+  <div id="panel">
+    <div *ngIf="contentId === 1" id="divConnexion">
+      <div id="formConnexionDiv">
+        <form #connexionForm="ngForm" (ngSubmit)="onSubmitConnexion(connexionForm)">
+          <div class="formDiv">
+            <input [(ngModel)]="userFormData.email" name="mailConnexion" type="text" placeholder="Tél. • Mail • Pseudo" id="EmailCo"
+              email="true" required #EmailCo="ngModel">
+            <img src="./assets/mailIcon.svg" class="inputIcon" />
+            <img *ngIf="EmailCo.errors && EmailCo.value" src="./assets/cross.svg" class="formIcon" />
+            <img *ngIf="!EmailCo.errors" src="./assets/check.svg" class="formIcon" />
+          </div>
+          <div class="formDiv">
+            <input [(ngModel)]="userFormData.userPwd" name="pwdConnexion" type="password" placeholder="Mot de passe"
+              id="PwdCo" required minlength="4" #PwdCo="ngModel">
+            <img src="./assets/pwdIcon.svg" class="inputIcon" />
+            <img *ngIf="PwdCo.errors && PwdCo.value" src="./assets/cross.svg" class="formIcon" />
+            <img *ngIf="!PwdCo.errors" src="./assets/check.svg" class="formIcon" />
+          </div>
+          <div class="formDiv formButton">
+            <button type="submit">Se Connecter</button>
+          </div>
+          <p class="errorMsg" *ngIf="error.connexion">{{error.connexion}}</p>
+        </form>
+      </div>
+    </div>
+    <div *ngIf="contentId === 2" id="divInscription">
+      <div id="formInscriptionDiv">
+        <form #inscriptionForm="ngForm" (ngSubmit)="onSubmitInscription(inscriptionForm)">
+          <div class="formDiv">
+            <input [(ngModel)]="userFormData.userAlias" type="text" name="pseudoInscription" placeholder="Pseudonyme"
+              id="pseudoIn" required [pattern]="userAliasPattern" #pseudoIn="ngModel">
+            <img src="./assets/userIcon.svg" class="inputIcon" />
+            <img *ngIf="pseudoIn.errors && (pseudoIn.value || pseudoIn.dirty)" src="./assets/cross.svg"
+              class="formIcon" />
+            <img *ngIf="!pseudoIn.errors" src="./assets/check.svg" class="formIcon" />
+          </div>
+          <div class="formDiv">
+            <input [(ngModel)]="userFormData.email" type="text" name="mailInscription" placeholder="Email" id="emailIn"
+              email="true" required #mailIn="ngModel">
+            <img src="./assets/mailIcon.svg" class="inputIcon" />
+            <img *ngIf="mailIn.errors && (mailIn.value || mailIn.dirty)" src="./assets/cross.svg" class="formIcon" />
+            <img *ngIf="!mailIn.errors" src="./assets/check.svg" class="formIcon" />
+          </div>
+          <div class="formDiv">
+            <input [(ngModel)]="userFormData.userPwd" type="password" name="pwdInscription" placeholder="Mot de passe"
+              id="pwdIn" required minlength="4" #pwdIn="ngModel">
+            <img src="./assets/pwdIcon.svg" class="inputIcon" />
+            <img *ngIf="pwdIn.errors && (pwdIn.value || pwdIn.dirty)" src="./assets/cross.svg" class="formIcon" />
+            <img *ngIf="!pwdIn.errors" src="./assets/check.svg" class="formIcon" />
+          </div>
+          <div class="formDiv">
+            <input [(ngModel)]="userFormData.userLinks.userSoundcloud" type="text" name="soundcloudInscription"
+              placeholder="Pseudo Soundcloud (Optionnel)" [pattern]="soundCloudPattern" id="scIn" #scIn="ngModel">
+            <img src="./assets/soundIcon.svg" class="inputIcon" />
+            <img *ngIf="scIn.errors" src="./assets/cross.svg" class="formIcon" />
+            <img *ngIf="!scIn.errors" src="./assets/check.svg" class="formIcon" />
+          </div>
+          <div>
+            <div class="formDiv formButton">
+              <button type="submit">S'inscrire</button>
+            </div>
+            <p class="errorMsg" *ngIf="error.inscription">{{error.inscription}}</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

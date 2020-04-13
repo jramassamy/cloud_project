@@ -1,0 +1,20 @@
+<div id="panelChallenge" class="hidden">
+  <div id="miniHeader">
+    <div>
+      <a [routerLink]="['./']" fragment="creationChallenge" (click)="goTo('creationChallenge')">Création challenge</a>
+    </div>
+    <div>
+      <a [routerLink]="['./']" fragment="listChallenge" (click)="goTo('listChallenge')">Liste
+        des challenges</a>
+    </div>
+  </div>
+  <div id="miniListAction">
+    <app-challenge-creation-admin>
+    </app-challenge-creation-admin>
+    <app-challenge-list-admin>
+    </app-challenge-list-admin>
+    <div id="miniOther" class="hidden">
+      Other
+    </div>
+  </div>
+</div>

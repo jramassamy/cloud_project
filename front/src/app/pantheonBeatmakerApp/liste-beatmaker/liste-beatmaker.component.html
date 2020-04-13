@@ -1,0 +1,8 @@
+<ng-container *ngIf="loaded">
+  <h1 id="titlePage">Panthéon des Beatmakers</h1>
+  <div id="containerChallenge">
+    <ng-container *ngFor="let challenge of listChallengeFinished">
+      <app-template-beatmaker [challenge]="challenge"></app-template-beatmaker>
+    </ng-container>
+  </div>
+</ng-container>

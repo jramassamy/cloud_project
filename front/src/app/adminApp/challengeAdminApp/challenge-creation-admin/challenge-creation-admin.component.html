@@ -1,0 +1,67 @@
+<div id="creationChallenge" class="hidden">
+  <form id="challengeForm" #challengeForm="ngForm" (ngSubmit)="onSubmitCreationChallenge(challengeForm)">
+    <p class="titleForm">Création d'un nouveau challenge</p>
+    <div>
+      <input [(ngModel)]="challengeData.processCreatif" name="processCreatif" type="datetime-local"
+        placeholder="date début process creatif" id="processCreatif" required #processCreatif="ngModel">
+      <img *ngIf="processCreatif.errors && (processCreatif.value || processCreatif.dirty)" src="./assets/cross.svg"
+        class="formIcon" />
+      <img *ngIf="!processCreatif.errors" src="./assets/check.svg" class="formIcon" />
+    </div>
+    <div>
+      <input [(ngModel)]="challengeData.debutChallenge" id="debutChallenge" name="debutChallenge" type="datetime-local"
+        placeholder="date de début du challenge (votes possibles)" required #debutChallenge="ngModel">
+      <img *ngIf="debutChallenge.errors && (debutChallenge.value || debutChallenge.dirty)" src="./assets/cross.svg"
+        class="formIcon" />
+      <img *ngIf="!debutChallenge.errors" src="./assets/check.svg" class="formIcon" />
+    </div>
+    <div>
+      <input [(ngModel)]="challengeData.finChallenge" id="finChallenge" name="finChallenge" type="datetime-local"
+        placeholder="date de fin du challenge" required #finChallenge="ngModel">
+      <img *ngIf="finChallenge.errors && (finChallenge.value || finChallenge.dirty)" src="./assets/cross.svg"
+        class="formIcon" />
+      <img *ngIf="!finChallenge.errors" src="./assets/check.svg" class="formIcon" />
+    </div>
+    <div>
+      <input [(ngModel)]="challengeData.challengeArtwork" id="challengeArtwork" name="challengeArtwork" type="text"
+        placeholder="url de l'artwork" required [pattern]="challengeArtworkPattern" #challengeArtwork="ngModel">
+      <img src="./assets/text.svg" class="inputIcon" />
+      <img *ngIf="challengeArtwork.errors && (challengeArtwork.value || challengeArtwork.dirty)"
+        src="./assets/cross.svg" class="formIcon" />
+      <img *ngIf="!challengeArtwork.errors" src="./assets/check.svg" class="formIcon" />
+    </div>
+    <div>
+      <input [(ngModel)]="challengeData.challengeName" id="challengeName" name="challengeName" type="text"
+        placeholder="nom du challenge" required #challengeName="ngModel" minlength="3">
+      <img src="./assets/text.svg" class="inputIcon" />
+      <img *ngIf="challengeName.errors && (challengeName.value || challengeName.dirty)" src="./assets/cross.svg"
+        class="formIcon" />
+      <img *ngIf="!challengeName.errors" src="./assets/check.svg" class="formIcon" />
+    </div>
+    <div>
+      <input [(ngModel)]="challengeData.challengePrices.first" id="first" name="first" type="text"
+        placeholder="lot 1ere place" required #first="ngModel" minlength="3">
+      <img src="./assets/text.svg" class="inputIcon" />
+      <img *ngIf="first.errors && (first.value || first.dirty)" src="./assets/cross.svg" class="formIcon" />
+      <img *ngIf="!first.errors" src="./assets/check.svg" class="formIcon" />
+    </div>
+    <div>
+      <input [(ngModel)]="challengeData.challengePrices.second" id="second" name="second" type="text"
+        placeholder="lot 2eme place" #second="ngModel" minlength="3">
+      <img src="./assets/text.svg" class="inputIcon" />
+      <img *ngIf="second.errors && (second.value || second.dirty)" src="./assets/cross.svg" class="formIcon" />
+      <img *ngIf="!second.errors" src="./assets/check.svg" class="formIcon" />
+    </div>
+    <div>
+      <input [(ngModel)]="challengeData.challengePrices.third" id="third" name="third" type="text"
+        placeholder="lot 3eme place" #third="ngModel" minlength="3">
+      <img src="./assets/text.svg" class="inputIcon" />
+      <img *ngIf="third.errors && (third.value || third.dirty)" src="./assets/cross.svg" class="formIcon" />
+      <img *ngIf="!third.errors" src="./assets/check.svg" class="formIcon" />
+    </div>
+    <div>
+      <button type="submit">ENVOYER</button>
+      <span class="errorMsg" *ngIf="error.challenge">{{error.challenge}}</span>
+    </div>
+  </form>
+</div>

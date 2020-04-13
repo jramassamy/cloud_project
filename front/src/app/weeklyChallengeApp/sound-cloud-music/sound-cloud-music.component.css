@@ -1,0 +1,369 @@
+.invisible {
+  display: none;
+}
+.soundPresentation {
+  height:100px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:25px;
+  margin-bottom:50px;
+}
+.artist {
+  width:100px;
+  height:120px;
+  background:transparent;
+  margin-right:12px;
+  visibility:hidden;
+  opacity:0;
+  transition:visibility 3s ease-in-out,opacity 3s ease-in-out;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.vote {
+  text-align: right;
+  border: none;
+  box-shadow: 0px 0px 3px 1px black;
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  text-shadow: black 3px 2px 5px;
+  height: 22px;
+  font-size: 15px;
+  border-radius: 2px;
+  outline:none;
+  width:80px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.artistImg {
+  border-radius:90px;
+  width:70px;
+  height:70px;
+  box-shadow: 0px 0px 3px 1px black;
+  cursor: pointer;
+}
+
+.sound{
+  width: 400px;
+  height: 100%;
+  position:relative;
+  margin-left:12px;
+}
+
+.bandeauFrame{
+  position:absolute;
+  width:405px;
+  height:3px;
+  top:0;
+  background-color:rgb(15,9,40);
+  opacity:0.8;
+  right:0;
+  left:0;
+}
+.btnFrame{
+  position: absolute;
+  bottom:0px;
+  background-color: rgb(15,9,40);
+  width: 405px;
+  height:19px;
+  right:0;
+  left:0;
+  border:none;
+  border-radius:1px;
+  font-family: lato;
+  color:white;
+}
+
+.visible {
+  visibility: visible !important;
+  opacity:1 !important;
+}
+
+.visibleIframe{
+  visibility: visible !important;
+}
+.player {
+  visibility: hidden;
+  transition:visibility 3s ease-in-out,opacity 3s ease-in-out, background-image 1s linear;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 0; bottom: 0;
+  margin: auto;
+  width: 100%;
+  background-color: #efefef;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 3px 1px black;
+  border-radius:2px;
+}
+
+.position {
+  opacity: 0.5;
+  position: absolute;
+  height: 100%;
+  width: 0;
+
+  background-color: white;
+  transition: width .1s linear;
+  mix-blend-mode: overlay;
+}
+
+.infoSong {
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: inherit;
+}
+.alignSpaceSong {
+  height: 45px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: calc(100% - 64px);
+  flex-direction: row;
+  position: relative;
+  padding-left: 64px;
+}
+.entete {
+  height: 100%;
+  width: 100%;
+  display:flex;
+  justify-content:flex-start;
+  align-items: center;
+  flex-direction: row;
+  max-width: 45%;
+  overflow-x: hidden;
+}
+.songRedirection {
+  height:100%;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 50%;
+  overflow-x: hidden;
+  padding-right: 5px;
+}
+
+.btnSongDiv{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 7px;
+  width:50px;
+  height:50px;
+  z-index: 3;
+}
+.playSong {
+  height:100%;
+  width:100%;
+  outline:none;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border:none;
+  cursor:pointer;
+  opacity: 0;
+  transition: 3s opacity linear;
+  background-color: transparent;
+  left: 0px;
+}
+
+.userPresentation{
+  width:max-content;
+  background-color: rgba(0,0,0,0.7);
+  padding-left:5px;
+  padding-right:5px;
+  height:20px;
+  border-radius: 3px;
+  z-index: 3;
+}
+.userName {
+  color: white;
+  font-size: 13px;
+  height: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+  white-space: nowrap;
+  max-width: 190px;
+}
+
+.titlePresentation{
+  max-width: calc(100% - 10px);
+  width: max-content;
+  background-color: rgba(0,0,0,0.7);
+  padding-left:5px;
+  padding-right:5px;
+  height:20px;
+  border-radius: 3px;
+  z-index: 3;
+}
+.titleSong {
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  overflow-x: hidden;
+  white-space: nowrap;
+  max-width: 190px;
+  height: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.shareSong {
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  border-radius: 3px;
+  width: 77px;
+  font-size: 12px;
+  height: 20px;
+  text-align: right;
+  outline:none;
+  background-position-y: center;
+  background-position-x: 5px;
+  background-size: 13px 13px;
+  background-repeat: no-repeat;
+  background-image:url(/assets/share.svg);
+  border:none;
+  z-index: 3;
+}
+
+.logoSC{
+  width: 100px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index:3;
+}
+.logoSC a, .logoSC img{
+  width:100%;
+  height:100%;
+}
+.logoSC img{
+  background-color: rgba(0,0,0,0.6);
+  border-radius:3px;
+}
+
+.playerProgressDiv{
+  position:absolute;
+  width:100%;
+  height:100%;
+  left:0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.playerProgress {
+  opacity: 0.4;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  right: 400px;
+  background-color: brown;
+  mix-blend-mode: overlay;
+}
+
+.duration {
+  position: absolute;
+  background-color: rgba(0,0,0,0.7);
+  padding : 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 3px;
+  right: 3px;
+  color: white;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.btnChecked {
+  background-color: rgba(9, 99, 48, 0.7) !important;
+}
+
+.heart {
+  position: absolute;
+  cursor: pointer;
+  height: 65px;
+  width: 65px;
+  left: -16px;
+  top: -22px;
+  background-image:url( 'https://abs.twimg.com/a/1446542199/img/t1/web_heart_animation.png');
+  background-repeat:no-repeat;
+  background-position: right;
+  background-size:2900%;
+}
+
+.heartLeft {
+  background-position: left !important;
+}
+.heart:hover {
+  background-position:right !important;
+}
+
+@keyframes heart-burst {
+  from {background-position:left;}
+  to { background-position:right;}
+}
+
+.is_animating {
+  animation: heart-burst 0.8s steps(28) 1; /*1.2s*/
+}
+
+@media(max-width: 600px) {
+  .soundPresentation {
+    height: initial;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .sound {
+    width: 350px;
+    height: 95px;
+    margin: 0 auto;
+    margin-top: 13px;
+  }
+  .playerProgress {
+    right: 350px;
+  }
+  .artist {
+    margin-right:0;
+    height: 105px;
+  }
+}
+@media(max-width: 380px) {
+  .sound {
+    width: 320px;
+  }
+  .playerProgress {
+    right: 320px;
+  }
+}
+@media(max-width: 340px) {
+  .sound {
+    width: 305px;
+  }
+  .playerProgress {
+    right: 305px;
+  }
+}
+
+.centerArtist {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,18 @@
+.hidden {
+  display:none !important;
+}
+.show {
+  display: flex !important;
+}
+#listChallenge {
+  height: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+:host ::ng-deep app-challenge-list-admin-template {
+  width: 100%;
+  margin-top: 10px;
+}

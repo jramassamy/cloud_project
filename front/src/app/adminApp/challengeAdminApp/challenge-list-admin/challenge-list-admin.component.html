@@ -1,0 +1,5 @@
+<div id="listChallenge" class="hidden">
+  <ng-container *ngFor="let challenge of challengeList; index as i">
+    <app-challenge-list-admin-template [challengeData]="challenge"></app-challenge-list-admin-template>
+  </ng-container>
+</div>

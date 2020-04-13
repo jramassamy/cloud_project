@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "6e063d7a-4dd5-457d-9010-388d77534933",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Connect Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userLinks\": {},\n\t\"userAlias\": \"Test1\",\n\t\"email\": \"test71@test.fr\",\n\t\"userPwd\": \"test1\",\n\t\"userTag\": \"test1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/userAPI/rights",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"userAPI",
+						"rights"
+					]
+				},
+				"description": "Login Request\n\n- POST"
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userLinks\": {},\n\t\"userAlias\": \"Test1\",\n\t\"email\": \"test71@test.fr\",\n\t\"userPwd\": \"test1\",\n\t\"userTag\": \"test1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/userAPI/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"userAPI",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Rights",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2ZlNzNkMDZjMzI3NzRmN2RmMzI1NGYiLCJ1c2VyVGFnIjoibHVja3kiLCJpYXQiOjE1ODY3MzU4OTV9.0ykRmH0WnOx76sZzIti846q926w46QjrA-QJsTXcYxw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/userAPI/rights",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"userAPI",
+						"rights"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2ZlNzNkMDZjMzI3NzRmN2RmMzI1NGYiLCJ1c2VyVGFnIjoibHVja3kiLCJpYXQiOjE1ODY3MzU4OTV9.0ykRmH0WnOx76sZzIti846q926w46QjrA-QJsTXcYxw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userLinks\": {\r\n    \"userSoundcloud\": \"\",\r\n    \"userFacebook\": \"\",\r\n    \"userTwitter\": \"\",\r\n    \"userSnapchat\": \"\",\r\n    \"userInstagram\": \"\",\r\n    \"userYoutube\": \"\"\r\n  },\r\n  \"email\": \"jonathanramassamy@outlook.fr\",\r\n  \"userAlias\": \"lucky\",\r\n  \"userTag\": \"lucky\",\r\n  \"userVerified\": true,\r\n  \"userDescription\": \"Bonjour, je me prénomme Lucky.\",\r\n  \"userRole\": \"administrateur\",\r\n  \"userPoints\": 0,\r\n  \"musics\": [],\r\n  \"telCrypted\": \"5e51bbd2c6a81675b951f732a6eb60ab\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/userAPI/update",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"userAPI",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Music",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userTag\": \"lucky\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/userAPI/loadUserByTag?userTag=lucky",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"userAPI",
+						"loadUserByTag"
+					],
+					"query": [
+						{
+							"key": "userTag",
+							"value": "lucky"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userLinks\": {},\n\t\"userAlias\": \"Test1\",\n\t\"email\": \"test71@test.fr\",\n\t\"userPwd\": \"test1\",\n\t\"userTag\": \"test1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/userAPI/sendMsg",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"userAPI",
+						"sendMsg"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

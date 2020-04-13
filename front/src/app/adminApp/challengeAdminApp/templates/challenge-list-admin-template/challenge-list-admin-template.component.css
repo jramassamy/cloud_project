@@ -1,0 +1,356 @@
+#sujet {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  min-width: 200px;
+  max-width: 200px;
+}
+#authorTopicDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  height: inherit;
+}
+#authorTopic {
+  display: flex;
+  align-items: center;
+}
+
+#top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+#infoProcess {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#divPanelButton img {
+  cursor: pointer;
+  width: 25px;
+  height: auto;
+}
+#divPanelButton img:first-child {
+  margin-right: 10px;
+}
+#topic {
+  width: 80%;
+  margin: auto;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color:rgba(255, 0, 0, 0.1);
+  box-shadow:0 1px 22px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  font-size: 15px;
+}
+
+#topic p {
+  font-size: inherit;
+}
+#lastParticipant{
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+  min-width: 250px;
+  max-width: 250px;
+}
+
+
+#lastParticipantDiv{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  height: inherit;
+}
+
+#lastParticipantDiv p {
+  width: 100%;
+  text-align: right;
+}
+#titleTopic {
+  display:block; /* balise a même comportement qu'un div*/
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: black 3px 2px 5px;
+  letter-spacing: 0.7px;
+  cursor: pointer;
+}
+
+.authorTopicImg {
+  margin-left: 5px;
+}
+
+.authorTopicImg, .lastParticipantImg {
+  width:30px;
+  height:30px;
+  border-radius: 50px;
+  box-shadow:0 1px 22px rgba(0,0,0,0.3);
+  margin-right: 5px;
+}
+
+#participant {
+  min-width: 200px;
+  max-width: 200px;
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+#messages {
+  min-width: 200px;
+  max-width: 200px;
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+#title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pin {
+  display: none;
+  width: 30px;
+  height: 30px;
+  -webkit-filter: drop-shadow(0 0 2px #000 );
+  filter: drop-shadow(0 0 2px #000);
+  margin-right: 5px;
+}
+
+/* Update Form*/
+.hidden {
+  display:none !important;
+}
+.show {
+  display: flex !important;
+}
+
+.titleForm {
+  margin-top:5px;
+  color:black;
+  text-align: center;
+  font-size:15px;
+}
+#creationChallenge {
+  height: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#challengeForm {
+  max-width: 600px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  color: white !important;
+  background-color: rgb(255,255,255,0.9);
+  box-shadow: 0px 0px 3px 1px black;
+}
+
+form div {
+  position:relative;
+  width: 595px;
+  height: 39px;
+  margin: 0 auto;
+  margin-top:25px;
+}
+
+form input {
+  width: 85%;
+  margin: 0 auto;
+  text-align: left;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-top: none;
+  border-left: none;
+  color: #333745;
+  height: calc( 100% - 2px );
+  border-bottom: 2px solid #333745;
+  border-right: none;
+  background-color: rgba(255,255,255,0);
+}
+#scIn {
+  font-size: 14px;
+}
+
+form button{
+  color: #fff;
+  background-color: #1E516E;
+  border-color: #1E516E;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+  outline:none;
+  margin: 0 auto;
+}
+
+form div{
+  display: flex;
+  align-items: center;
+}
+
+/*not using background image due to google autocompletion yellow color*/
+.inputIcon {
+  position: absolute;
+  height: 20px;
+  width: auto;
+  right: 45px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.formIcon
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 15px;
+  width: 15px;
+  right: 15px;
+}
+
+
+.errorMsg {
+  position: absolute;
+  bottom:5px;
+  left:0;
+  right:0;
+  margin: auto;
+  color: #85144b;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 15px;
+  flex-basis: calc(100% - 120px);
+}
+
+#divBtnForm {
+  margin-top:15px;
+}
+
+.listMusicText, .listMusicText a {
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: black 3px 2px 5px;
+  margin-top: 7px;
+}
+
+#listMusicButtons {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+#listMusicButtons div {
+  cursor: pointer;
+  width: 100px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 16px;
+  text-shadow: black 3px 2px 5px;
+  background-color: rgba(8, 28, 82, 0.7);
+  box-shadow:0 1px 22px rgba(0,0,0,0.7);
+}
+
+.btnActive {
+  background-color: rgba(0, 77, 0, 0.7) !important;
+}
+
+:host ::ng-deep .soundPresentation {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 1300px) {
+  #lastParticipant{
+    min-width: 160px;
+    max-width: 160px;
+  }
+  #sujet {
+    min-width: 200px;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 800px) {
+  #topic {
+    width: 95%;
+    font-size: 15px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #lastParticipant, #sujet{
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    min-width: 175px;
+    max-width: 200px;
+  }
+  #titleTopic {
+    font-size: 17px;
+  }
+
+}
+
+@media (max-width: 430px) {
+  #sujet{
+    min-width: initial;
+    max-width: initial;
+  }
+  
+  #infoProcess > * {
+    max-width: initial;
+    min-width: initial;
+    width: 100%;
+    justify-content: center;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+  #infoProcess * {
+    margin: 0 auto;
+    text-align: center;
+  }
+  #titleTopic {
+    overflow-y: auto;
+    max-width: 300px;
+  }
+}

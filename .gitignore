@@ -1,0 +1,5 @@
+back/node_modules/
+
+front/dist/
+front/node_modules/
+front/temp/

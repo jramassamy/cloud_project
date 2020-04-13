@@ -1,0 +1,112 @@
+<div id="mainContent">
+  <div class="menu-icon" id="openHeader" (click)="toggleMenu()">☰</div>
+  <div id="menuMobile" class="menu" #myMenu>
+    <button [style.background-image]="'url(./assets/header/logout.svg)'" class="logoutHeader" *ngIf="user.isConnected()"
+      (click)="logout(true)">
+    </button>
+    <a (click)="toggleMenu()" [style.background-image]="'url(./assets/header/admin.svg)'" class="adminPanelHeader"
+      *ngIf="user.userCanAccessAdminDashboard()" routerLink="/adminDashboard">
+    </a>
+    <p class="logoDiv"><a (click)="toggleMenu()" routerLink=""><img class="logo" src="./assets/logo.png"></a></p>
+    <p *ngIf="!user.isConnected()"><a (click)="toggleMenu()" routerLink="/connexion" class="hoverCenter">
+        <img class="avatar" src="./assets/header/avatar.svg" />
+        CONNEXION/INSCRIPTION</a></p>
+    <p *ngIf="user.isConnected()"><a (click)="toggleMenu()" routerLink="/profil/{{user.currentUser.userTag}}"
+        class="hoverCenter">
+        <img class="avatar" src="./assets/header/avatar.svg" />
+        {{user.currentUser.userAlias}}</a></p>
+    <p><a (click)="toggleMenu()" routerLink="/weeklyChallenge" class="hoverCenter">
+        <img src="./assets/header/headphones.svg" />
+        CHALLENGE DE LA SEMAINE</a></p>
+    <p><a (click)="toggleMenu()" routerLink="/nextChallenge" class="hoverCenter">
+        <img src="./assets/header/nextChallenge.svg" />
+        PROCHAIN CHALLENGE</a></p>
+    <p><a (click)="toggleMenu()" routerLink="/pantheon">
+        <img src="./assets/header/winners.svg" />
+        PANTHÉON DES BEATMAKERS</a></p>
+    <p><a (click)="toggleMenu()" routerLink="/liste-des-challenges">
+        <img src="./assets/header/star.svg" />
+        LISTE DES CHALLENGES</a></p>
+    <div class="linkHeader">
+      <div>
+        <a href="https://twitter.com/creativebeatsfr" target="_blank">
+          <img class="twitter" src="./assets/header/twitter.png" />
+        </a>
+      </div>
+      <div>
+        <a href="https://www.instagram.com/creativebeatsfr" target="_blank">
+          <img class="instagram" src="./assets/header/instagram.png" />
+        </a>
+      </div>
+      <div>
+        <a href="https://www.facebook.com/creativebeats.fr" target="_blank">
+          <img class="facebook" src="./assets/header/facebook.svg" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="menuDesktop">
+    <div id="menu" class="menu" #myMenu>
+      <button [style.background-image]="'url(./assets/header/logout.svg)'" class="logoutHeader"
+        *ngIf="user.isConnected()" (click)="logout(false)">
+      </button>
+      <a [style.background-image]="'url(./assets/header/admin.svg)'" class="adminPanelHeader"
+        *ngIf="user.userCanAccessAdminDashboard()" routerLink="/adminDashboard">
+      </a>
+      <button class="hideHeaderButton" class="btnHeader" [style.background-image]="'url(./assets/header/cross.svg)'"
+        (click)="toggleMenu()">
+      </button>
+      <p class="logoDiv"><a routerLink=""><img class="logo" src="./assets/logo.png"></a></p>
+      <p *ngIf="!user.isConnected()"><a routerLink="/connexion" class="hoverCenter">
+          <img class="avatar" src="./assets/header/avatar.svg" />
+          CONNEXION</a></p>
+      <p *ngIf="user.isConnected()"><a routerLink="/profil/{{user.currentUser.userTag}}" class="hoverCenter">
+          <img class="avatar" src="./assets/header/avatar.svg" />
+          {{user.currentUser.userAlias}}</a></p>
+      <p><a routerLink="/weeklyChallenge" class="hoverCenter">
+          <img src="./assets/header/headphones.svg" />
+          CHALLENGE DE LA SEMAINE</a></p>
+      <p><a routerLink="/nextChallenge" class="hoverCenter">
+          <img src="./assets/header/nextChallenge.svg" />
+          PROCHAIN CHALLENGE</a></p>
+      <p><a routerLink="/pantheon">
+          <img src="./assets/header/winners.svg" />
+          PANTHÉON DES BEATMAKERS</a></p>
+      <p><a routerLink="/liste-des-challenges">
+          <img src="./assets/header/star.svg" />
+          LISTE DES CHALLENGES</a></p>
+      <div class="linkHeader">
+        <div>
+          <a href="https://twitter.com/creativebeatsfr" target="_blank">
+            <img class="twitter" src="./assets/header/twitter.png" />
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/creativebeatsfr" target="_blank">
+            <img class="instagram" src="./assets/header/instagram.png" />
+          </a>
+        </div>
+        <div>
+          <a href="https://www.facebook.com/creativebeats.fr" target="_blank">
+            <img class="facebook" src="./assets/header/facebook.svg" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <div *ngIf="mobileMenuOpened" id="divCloseMenuMobile" (scroll)="toggleMenu()" (click)="toggleMenu()"></div>
+    <div id="menuMobileEntete">
+      <p>CreativeBeats</p>
+      <div class="linkHeaderEntete">
+        <a href="https://www.instagram.com/creativebeatsfr" target="_blank">
+          <img src="./assets/header/instagram.png" />
+        </a>
+        <a href="https://www.youtube.com/channel/UCPoF3pEhRliHIOsHaITTXqA?sub_confirmation=1" target="_blank">
+          <img src="./assets/youtube.svg" />
+        </a>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

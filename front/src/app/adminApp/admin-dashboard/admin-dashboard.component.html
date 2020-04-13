@@ -1,0 +1,17 @@
+<div id="header">
+  <div>
+    <a [routerLink]="['./']" fragment="section" (click)="goTo('panelForum')">FORUM</a>
+  </div>
+  <div>
+    <a [routerLink]="['./']" fragment="challenge" (click)="goTo('panelChallenge')">CHALLENGES</a>
+  </div>
+</div>
+<div id="listAction">
+  <app-forum-admin-panel>
+  </app-forum-admin-panel>
+  <app-challenge-admin-panel>
+  </app-challenge-admin-panel>
+  <div id="other" class="hidden">
+    OTHER
+  </div>
+</div>

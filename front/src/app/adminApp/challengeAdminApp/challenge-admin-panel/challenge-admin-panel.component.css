@@ -1,0 +1,54 @@
+.hidden {
+  display:none !important;
+}
+.show {
+  display: flex !important;
+}
+
+#panelChallenge {
+  height: 100%;
+  display:flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+}
+
+#miniHeader {
+  display:flex;
+  height:35px;
+  top: 0;
+  background-color: rgba(8, 28, 82, 0.2);
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  font-size: 15px;
+  box-shadow: 0 1px 22px rgba(0,0,0,0.3);
+  color:white;
+  font-weight: bold;
+  align-items: center;
+}
+
+#miniHeader div {
+  height: inherit;
+  border-left: 2px solid rgba(0,0,0,0.3);
+  width:150px;
+  max-width: calc(100% / 3 - 14px);
+}
+
+#miniHeader div:last-child {
+  border-right: 2px solid rgba(0,0,0,0.3);
+}
+
+#miniHeader div a {
+  width:100%;
+  height: inherit;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#miniListAction {
+  margin-top: 10px;
+}
+

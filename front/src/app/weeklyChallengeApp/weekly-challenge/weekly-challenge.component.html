@@ -1,0 +1,46 @@
+<ng-container *ngIf="!loading">
+  <h1 id="titlePage">Le Challenge de la semaine</h1>
+  <ng-container *ngIf="this.user.currentUser && currentChallenge">
+    <p class="voteInformation" *ngIf="nbVoteRestant === null">🎼Il te reste 3 votes 😄</p>
+    <ng-container *ngIf="nbVoteRestant !== null">
+      <p class="voteInformation" *ngIf="nbVoteRestant > 1">🎼Il te reste {{nbVoteRestant}} votes 😄</p>
+      <p class="voteInformation" *ngIf="nbVoteRestant === 1">🎼Il te reste {{nbVoteRestant}} vote 😄</p>
+      <p class="voteInformation" *ngIf="nbVoteRestant === 0">🎼Merci pour ta participation 🔥😄!</p>
+    </ng-container>
+  </ng-container>
+  <ng-container *ngIf="currentChallenge">
+    <div id="contentTitle">
+      <div id="leftLine">
+        <img src="./assets/line.png">
+      </div>
+      <img id="challengeArtwork" [src]="currentChallenge.challengeArtwork">
+      <div id="rightLine">
+        <img src="./assets/line.png" />
+      </div>
+    </div>
+    <div id="soundArtist" *ngIf="soundArtistFromUrl">
+      <p id="artistName">{{soundArtistFromUrl.user.userAlias}}</p>
+      <app-sound-cloud-music *ngIf="soundArtistFromUrl.state==='approved'" [artistSound]="soundArtistFromUrl"
+        [challengeId]="currentChallenge._id" [electeurData]="electeur"
+        (OnClickVote)="updateVoteInformationOnClick($event)"
+        (OnDelete)="updateOnDeletePushed($event)">
+      </app-sound-cloud-music>
+      <hr id="lineArtist" />
+    </div>
+    <div id="soundContent">
+      <ng-container *ngFor="let artistSound of currentChallenge.musics">
+        <app-sound-cloud-music *ngIf="artistSound.state==='approved'" [artistSound]="artistSound"
+          [challengeId]="currentChallenge._id" [electeurData]="electeur"
+          (OnClickVote)="updateVoteInformationOnClick($event)"
+          (OnDelete)="updateOnDeletePushed($event)"></app-sound-cloud-music>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <div id="defaultTextDiv" *ngIf="!currentChallenge">
+    <p>Le prochain challenge est en préparation, nos Beatmakers sont sur le coup, dès qu'ils sont prêts nous te
+      tiendrons informé</p>
+    <p>En attendant, tu peux toujours aller voir quand commence <a routerLink="/nextChallenge">le prochain
+        challenge</a> ou jeter un coup d'oeil <a routerLink="/challenges">à celui qui vient de se terminer</a></p>
+  </div>
+</ng-container>

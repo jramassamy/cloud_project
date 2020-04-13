@@ -1,0 +1,111 @@
+.hidden {
+  display:none !important;
+}
+.show {
+  display: flex !important;
+}
+
+.titleForm {
+  margin-top:5px;
+  color:black;
+  text-align: center;
+  font-size:15px;
+}
+#creationChallenge {
+  height: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#challengeForm {
+  margin: 0 auto;
+  color: white !important;
+  background-color: rgb(255,255,255,0.9);
+  box-shadow: 0px 0px 3px 1px black;
+  width: 595px;
+  max-width: 95vw;
+}
+
+form div {
+  position:relative;
+  width: 100%;
+  height: 39px;
+  margin: 0 auto;
+  margin-top:25px;
+}
+
+form input {
+  width: 85%;
+  margin: 0 auto;
+  text-align: left;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-top: none;
+  border-left: none;
+  color: #333745;
+  height: calc( 100% - 2px );
+  border-bottom: 2px solid #333745;
+  border-right: none;
+  background-color: rgba(255,255,255,0);
+}
+#scIn {
+  font-size: 14px;
+}
+
+form button{
+  color: #fff;
+  background-color: #1E516E;
+  border-color: #1E516E;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+  outline:none;
+  margin: 0 auto;
+}
+
+form div{
+  display: flex;
+  align-items: center;
+}
+
+/*not using background image due to google autocompletion yellow color*/
+.inputIcon {
+  position: absolute;
+  height: 20px;
+  width: auto;
+  right: 45px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.formIcon
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 15px;
+  width: 15px;
+  right: 15px;
+}
+
+
+.errorMsg {
+  position: absolute;
+  bottom:5px;
+  left:0;
+  right:0;
+  margin: auto;
+  color: #85144b;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 15px;
+  flex-basis: calc(100% - 120px);
+}

@@ -1,0 +1,281 @@
+#mainDialog {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  height: 100%;
+  min-height: 400px;
+}
+/*HEADER*/
+#header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+#inscriptionDiv {
+  margin-left: 15px;
+}
+
+#header ul li {
+  display: inline-block;
+  text-align: center;
+}
+
+#certifHeader {
+  width: 195px !important;
+}
+#header a {
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.one, .two {
+  width: 100px;
+}
+
+.twoVote {
+  width: 175px;
+}
+.one:hover ~ hr {
+  margin-left: 0;
+  width: 100px;
+}
+.two:hover ~ hr {
+  margin-left: 115px;
+}
+
+.twoVote:hover ~ hr {
+  margin-left: 115px;
+  width: 175px;
+}
+
+.hrOnCertif {
+  width: 195px !important;
+}
+.hrOnTwoVote, .hrOnTwo {
+  margin-left: 115px;
+}
+
+.hrOnTwoVote {
+  width: 175px;
+}
+
+hr {
+  height: .25rem;
+  width: 100px;
+  margin: 0;
+  background: rgba(8, 28, 82, 1);
+  border: none;
+  transition: .3s ease-in-out;
+}
+
+/*FORM*/
+#panel {
+  flex-grow: 1;
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  height: 20px;
+  width: auto;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.formIcon
+{
+  width: inherit;
+  height: 15px;
+  width: 15px;
+  margin-left: 10px;
+}
+
+form button{
+  border-color: #1E516E;
+  border: none;
+  border-radius: 5px;
+  background-color: #1E516E;
+  color: white;
+  text-transform: uppercase;
+  height: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 13px;
+  outline: none;
+  letter-spacing: 1px;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.formButton {
+  position: absolute !important;
+  bottom: 10px;
+  left: 0;
+  right:0;
+  margin: 0 auto;
+}
+form {
+  margin-top: 15px;
+}
+.formDiv {
+  position:relative;
+  display: flex;
+  align-items: center;
+  min-width: 280px; /*Google Chrome yellow autocompletion bypass*/
+  width: 280px;
+  margin-top:15px;
+  height: 55px;
+  margin: 0 auto;
+}
+form input{
+  min-width: 100%;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-top: none;
+  border-left: none;
+  color: #333745;
+  height: 25px;
+  border-bottom: 2px solid #333745;
+  border-right: none;
+  background-color: rgba(255,255,255,0);
+}
+.captcha /deep/ div {
+  margin: 0 auto;
+}
+
+#divCertification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.certifInput {
+  min-width: 100%;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-top: none;
+  border-left: none;
+  color: #333745;
+  height: 25px;
+  border-bottom: 2px solid #333745;
+  border-right: none;
+  background-color: rgba(255,255,255,0);
+}
+
+#divCertification button {
+  position: absolute;
+  bottom: 20px;
+  border-color: #1E516E;
+  border: none;
+  border-radius: 5px;
+  background-color: #1E516E;
+  color: white;
+  text-transform: uppercase;
+  height: 30px;
+  font-size: 11px;
+  outline: none;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: auto;
+  font-weight: bold;
+}
+
+.infoScenario, #enteteInfoCode {
+  font-weight: bold;
+  text-align: center;
+  line-height: 17px;
+  font-size: 14px;
+  z-index: 1;
+}
+
+#textSafeCode1 a {
+  color: black;
+  text-decoration: underline;
+}
+.infoScenario span {
+  text-decoration: underline;
+}
+#enteteInfoCode {
+  margin-bottom: 0 !important;
+}
+
+.errorMsg {
+  color: #85144b;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 15px;
+  flex-basis: calc(100% - 120px);
+  text-align: center;
+}
+
+#infoCryptage {
+  z-index: 1;
+  position: absolute;
+  bottom: 15px;
+  transition: .5s ease-in-out;
+}
+
+#funnyUnidentifiedAnimal {
+  width: 231px;
+  height: 160px;
+  position: absolute;
+  bottom: 40px;
+}
+
+#textSafeCode1 {
+  margin-top: 3px;
+  margin-bottom: 7px;
+}
+
+#textSafeCode1, #textSafeCode2 {
+  transition: .5s ease-in-out;
+}
+#fbImg {
+  width: 17px;
+  height: 17px;
+  border-radius: 5px;
+  position: absolute;
+  margin-left: 3px;
+  margin-top: -1px;
+}
+
+.opacityVisible {
+  opacity: 1 !important;
+}
+
+.opacityInvisible {
+  opacity: 0 !important;
+}
+
+.displayNone {
+  display: none !important;
+}
+
+#recaptchaDiv {
+  margin-top: 10px;
+  transition: .5s ease-in-out;
+}
+
+#funnyPanda {
+  height: 255px;
+  width: auto;
+}
+
+#verifierCode {
+  cursor: pointer;
+}

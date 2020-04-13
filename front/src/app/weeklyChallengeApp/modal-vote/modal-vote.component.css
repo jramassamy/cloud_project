@@ -1,0 +1,77 @@
+#flex {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  max-width: 500px;
+  cursor: pointer;
+}
+
+#flex p {
+  text-align: center;
+  color: white;
+  line-height: 20px;
+  font-size: 16px;
+}
+
+#flex a {
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 90%;
+  line-height: 15px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  text-transform: uppercase;
+  background: white;
+  border-radius: 5px;
+}
+
+#flex a:hover {
+  opacity: 0.8;
+}
+
+#endDesc {
+  margin-top: 5px;
+}
+#entete {
+  padding-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+#txtConcept {
+  margin-bottom: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+#smile {
+  margin-bottom: 5px;
+}
+
+#chill {
+  background-color: rgb(9, 31, 92) !important;
+  color: white !important;
+  box-shadow: 0px 0px 3px 1px black;
+}
+#reveil {
+  background-color: rgb(1, 82, 26) !important;
+  color: white !important;
+}
+#ete {
+  background-color: rgb(207, 120, 7) !important;
+  color: white !important;
+}
+#trap {
+  background-color: rgb(48, 4, 68) !important;
+  color: white !important;
+}

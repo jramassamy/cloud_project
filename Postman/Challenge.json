@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "90df7cf9-b955-43de-93dc-7b27b26f19c2",
+		"name": "Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Challenge",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2ZlNzNkMDZjMzI3NzRmN2RmMzI1NGYiLCJ1c2VyVGFnIjoibHVja3kiLCJpYXQiOjE1ODY3MzU4OTV9.0ykRmH0WnOx76sZzIti846q926w46QjrA-QJsTXcYxw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"processCreatif\": \"1997-02-13T00:00\",\r\n  \"debutChallenge\": \"1997-03-13T00:00\",\r\n  \"finChallenge\": \"1997-04-13T00:00\",\r\n  \"challengeArtwork\": \"https://cdn.futura-sciences.com/buildsv6/images/wide1920/9/3/2/9321f807a3_100799_soleil-rouge.jpg\",\r\n  \"challengeName\": \"arts\",\r\n  \"challengePrices\": { \"first\": \"15€\", \"second\": \"\", \"third\": \"\" }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/challengeAPI/createChallenge?=",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"challengeAPI",
+						"createChallenge"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Challenge",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2ZlNzNkMDZjMzI3NzRmN2RmMzI1NGYiLCJ1c2VyVGFnIjoibHVja3kiLCJpYXQiOjE1ODY3MzU4OTV9.0ykRmH0WnOx76sZzIti846q926w46QjrA-QJsTXcYxw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"_id\": \"5cfed8168150a90ad1161096\",\r\n  \"processCreatif\": \"2019-06-09T22:00\",\r\n  \"debutChallenge\": \"2020-06-16T21:59\",\r\n  \"finChallenge\": \"2019-06-16T22:00\",\r\n  \"challengeArtwork\": \"https://i.ibb.co/q1Z59Rz/typebeatlibre.png\",\r\n  \"challengeName\": \"Type Beat - Libre\",\r\n  \"challengePrices\": {\r\n    \"first\": \"0€, Retrait des lots à partir de cette édition ^^, néanmoins les 80% reversés aux compositeurs diffusés ça changera pas, sinon, \",\r\n    \"second\": \"\",\r\n    \"third\": \"\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/challengeAPI/updateChallenge",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"challengeAPI",
+						"updateChallenge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Next Challenge",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2ZlNzNkMDZjMzI3NzRmN2RmMzI1NGYiLCJ1c2VyVGFnIjoibHVja3kiLCJpYXQiOjE1ODY3MzU4OTV9.0ykRmH0WnOx76sZzIti846q926w46QjrA-QJsTXcYxw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/challengeAPI/getNextChallenge",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"challengeAPI",
+						"getNextChallenge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Current Challenge",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userLinks\": {},\n\t\"userAlias\": \"Test1\",\n\t\"email\": \"test71@test.fr\",\n\t\"userPwd\": \"test1\",\n\t\"userTag\": \"test1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/challengeAPI/getCurrentChallenge",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"challengeAPI",
+						"getCurrentChallenge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Participant to Challenge",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2ZlNzNkMDZjMzI3NzRmN2RmMzI1NGYiLCJ1c2VyVGFnIjoibHVja3kiLCJpYXQiOjE1ODY3MzU4OTV9.0ykRmH0WnOx76sZzIti846q926w46QjrA-QJsTXcYxw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userLinks\": {},\n\t\"userAlias\": \"Test1\",\n\t\"email\": \"test71@test.fr\",\n\t\"userPwd\": \"test1\",\n\t\"userTag\": \"test1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/production/challengeAPI/addParticipant",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"production",
+						"challengeAPI",
+						"addParticipant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Music Challenge State",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userLinks\": {},\n\t\"userAlias\": \"Test1\",\n\t\"email\": \"test71@test.fr\",\n\t\"userPwd\": \"test1\",\n\t\"userTag\": \"test1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/production/challengeAPI/updateMusicState",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"production",
+						"challengeAPI",
+						"updateMusicState"
+					]
+				},
+				"description": "- Validate\n- Invalidate"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Vote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userLinks\": {},\n\t\"userAlias\": \"Test1\",\n\t\"email\": \"test71@test.fr\",\n\t\"userPwd\": \"test1\",\n\t\"userTag\": \"test1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/production/challengeAPI/postVote?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2ZlNzNkMDZjMzI3NzRmN2RmMzI1NGYiLCJ1c2VyVGFnIjoibHVja3kiLCJpYXQiOjE1ODY3MzU4OTV9.0ykRmH0WnOx76sZzIti846q926w46QjrA-QJsTXcYxw",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"production",
+						"challengeAPI",
+						"postVote"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2ZlNzNkMDZjMzI3NzRmN2RmMzI1NGYiLCJ1c2VyVGFnIjoibHVja3kiLCJpYXQiOjE1ODY3MzU4OTV9.0ykRmH0WnOx76sZzIti846q926w46QjrA-QJsTXcYxw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Soundcloud Music",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userLinks\": {},\n\t\"userAlias\": \"Test1\",\n\t\"email\": \"test71@test.fr\",\n\t\"userPwd\": \"test1\",\n\t\"userTag\": \"test1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/challengeAPI/getSoundCloudMusic?url",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"challengeAPI",
+						"getSoundCloudMusic"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Finished Challenge",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userLinks\": {},\n\t\"userAlias\": \"Test1\",\n\t\"email\": \"test71@test.fr\",\n\t\"userPwd\": \"test1\",\n\t\"userTag\": \"test1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/challengeAPI/getLastFinishedChallenge",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"challengeAPI",
+						"getLastFinishedChallenge"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
